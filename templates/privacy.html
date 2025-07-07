@@ -1,141 +1,236 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy | DentalHavens</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         body {
             background-color: #f9f9f9;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
-
         .navbar {
             background-color: #eaf4fc;
             padding: 15px 20px;
             display: flex;
             align-items: center;
             width: 100%;
-        }
-
-        .navbar a {
-            font-size: 24px;
-            color: #00487c;
-            font-weight: bold;
-            text-decoration: none;
-        }
-        .content {
-            padding: 50px;
-        }
-
-        .footer {
-            background-color: #021b2f;
-            padding: 40px 20px;
-            color: #ffffff;
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        .footer a {
-            color: #ffffff;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        .footer a:hover {
-            color: #00bcd4;
-        }
-        .back-button {
-            color: #ffffff;
-            background-color: #00487c;
-            font-size: 1rem;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            transition: color 0.3s ease, background-color 0.3s ease;
-        }
-        .back-button:hover {
-            color: var(--accent);
-            background-color: rgba(255, 255, 255, 0.1);
+            z-index: 1000;
         }
         .navbar-brand {
             color: #00487c !important;
             font-size: 24px;
             font-weight: bold;
+            text-decoration: none;
+        }
+        .back-button {
+            color: #ffffff;
+            background-color: #00487c;
+            font-size: 14px;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: color 0.3s ease, background-color 0.3s ease;
+            margin-left: auto;
+        }
+        .back-button:hover {
+            color: #00bcd4;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .content {
+            padding: 60px 60px;
+            max-width: 1200px;
+            margin-left: 0;
+            margin-right: auto;
+            flex: 1;
+            text-align: left;
+        }
+        h2, h3 {
+            color: #00487c;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        .footer {
+            background-color: #021b2f;
+            padding: 40px 20px;
+            color: #ffffff;
+            text-align: center;
+            margin-top: auto;
+        }
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        .footer a:hover {
+            color: #00bcd4;
+        }
+        .social-media .social-icon {
+            color: #ffffff;
+            font-size: 20px;
+            margin: 0 10px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .social-media .social-icon:hover {
+            color: #00bcd4;
+            transform: scale(1.2);
+        }
+        @media (max-width: 768px) {
+            .content {
+                padding: 30px 15px;
+            }
+            h2 {
+                font-size: 1.75rem;
+            }
+            h3 {
+                font-size: 1.25rem;
+            }
         }
     </style>
 </head>
 <body>
-
+    <!-- Navbar -->
     <nav class="navbar">
         <a href="{% url 'home' %}" class="navbar-brand">DentalHavens</a>
-        <a href="#" class="back-button text-white" style="font-size: medium;" onclick="history.back()">Back</a>
+        <a href="#" class="back-button" onclick="history.back()">Back</a>
     </nav>
 
     <div class="content">
         <h2 data-aos="fade-down">Privacy Policy</h2>
-        <p data-aos="fade-right" data-aos-delay="400">We value your privacy and are committed to protecting your personal data. This policy explains how we collect, use, and safeguard your information.</p>
+        <p data-aos="fade-down" style="font-style: italic;">Last updated: 7 July 2025</p>
 
-        <h3 data-aos="fade-down">1. Information We Collect</h3>
-        <p data-aos="fade-right" data-aos-delay="400">We may collect personal data such as name, email, phone number, and medical details to provide our services.</p>
-        
-        <h3 data-aos="fade-down">2. How We Use Your Data</h3>
-        <ul>
-            <li data-aos="fade-right" data-aos-delay="400">To process bookings and provide dental services.</li>
-            <li data-aos="fade-right" data-aos-delay="500">To contact you regarding appointments and services.</li>
-            <li data-aos="fade-right" data-aos-delay="600">To improve our website and customer experience.</li>
+        <h3 data-aos="fade-down">1. Introduction</h3>
+        <p data-aos="fade-right">Dental Havens (“we”, “us”, “our”) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, store, and share your personal information when you use dentalhavens.com (“Website”) and our services.</p>
+
+        <h3 data-aos="fade-down">2. What Data We Collect</h3>
+        <p data-aos="fade-right">We may collect the following types of personal data:</p>
+        <ul data-aos="fade-right" data-aos-delay="100">
+            <li>Contact Information: Name, email address, phone number, postal address.</li>
+            <li>Medical Information: Medical history, dental records, photos, documents, and other health-related data necessary for treatment coordination.</li>
+            <li>Travel Information: Passport details, travel preferences, accommodation needs.</li>
+            <li>Communication Data: Messages via WhatsApp, email, website forms, and CRM platforms (e.g., Zoho).</li>
+            <li>Affiliate Data: Promo codes, referral information, commission records.</li>
+            <li>Technical Data: IP address, browser type, device information, cookies, and analytics data.</li>
         </ul>
 
-        <h3 data-aos="fade-down">3. Data Security</h3>
-        <p data-aos="fade-right" data-aos-delay="400">We implement security measures to protect your data. However, no method of transmission over the internet is 100% secure.</p>
+        <h3 data-aos="fade-down">3. How We Use Your Data</h3>
+        <p data-aos="fade-right">We use your data to:</p>
+        <ul data-aos="fade-right" data-aos-delay="100">
+            <li>Facilitate dental treatment bookings and coordinate with clinics and service providers.</li>
+            <li>Communicate with you regarding your inquiries, bookings, and aftercare.</li>
+            <li>Organize travel, accommodation, and tourism packages.</li>
+            <li>Operate our affiliate program and process commissions.</li>
+            <li>Improve our services and Website functionality.</li>
+            <li>Comply with legal obligations.</li>
+        </ul>
 
-        <h3 data-aos="fade-down">4. Third-Party Sharing</h3>
-        <p data-aos="fade-right" data-aos-delay="400">We do not sell or share your data with third parties except when required by law.</p>
+        <h3 data-aos="fade-down">4. How We Store & Protect Your Data</h3>
+        <p data-aos="fade-right">Your data is stored securely on encrypted servers and CRM platforms (such as Zoho) with restricted access.</p>
+        <ul data-aos="fade-right" data-aos-delay="100">
+            <li>We implement technical and organizational measures to protect your data against unauthorized access, loss, or misuse.</li>
+            <li>Sensitive medical information is handled with strict confidentiality.</li>
+        </ul>
 
-        <h3 data-aos="fade-down">5. Contact Us</h3>
-        <p data-aos="fade-right" data-aos-delay="400">If you have any questions about this Privacy Policy, contact us at <a href="mailto:info@dentalhavens.com">info@dentalhavens.com</a>.</p>
+        <h3 data-aos="fade-down">5. Third Party Sharing</h3>
+        <p data-aos="fade-right">We may share your data with:</p>
+        <ul data-aos="fade-right" data-aos-delay="100">
+            <li>Dental Clinics: To arrange consultations, treatment plans, and appointments.</li>
+            <li>Travel & Accommodation Providers: For booking and coordination purposes.</li>
+            <li>CRM & Communication Platforms: Such as Zoho, WhatsApp, and email providers, for service delivery and support.</li>
+            <li>Affiliates: Limited data may be shared for commission tracking.</li>
+            <li>We do not sell your personal data to third parties.</li>
+        </ul>
+
+        <h3 data-aos="fade-down">6. Cookies & Analytics</h3>
+        <p data-aos="fade-right">Our Website uses cookies and similar technologies to enhance user experience and analyze Website traffic.</p>
+        <ul data-aos="fade-right" data-aos-delay="100">
+            <li>We may use third-party analytics tools (e.g., Google Analytics) to collect aggregated, non-identifiable data about Website usage.</li>
+            <li>You can manage cookie preferences via your browser settings.</li>
+        </ul>
+
+        <h3 data-aos="fade-down">7. Your Rights (UK & EU Users)</h3>
+        <p data-aos="fade-right">As a UK or EU resident, you have the following rights under GDPR:</p>
+        <ul data-aos="fade-right" data-aos-delay="100">
+            <li>Access: Request a copy of your personal data.</li>
+            <li>Rectification: Request correction of inaccurate or incomplete data.</li>
+            <li>Erasure: Request deletion of your data (“right to be forgotten”).</li>
+            <li>Restriction: Request restriction of processing in certain circumstances.</li>
+            <li>Objection: Object to processing of your data.</li>
+            <li>Portability: Request transfer of your data to another provider.</li>
+            <li>Withdraw Consent: Where processing is based on consent, you may withdraw it at any time.</li>
+        </ul>
+        <p data-aos="fade-right">To exercise your rights, please contact us at <a href="mailto:info@dentalhavens.com">info@dentalhavens.com</a>.</p>
+
+        <h3 data-aos="fade-down">8. Data Retention</h3>
+        <p data-aos="fade-right">We retain your personal data only as long as necessary to fulfill the purposes outlined in this policy, or as required by law.</p>
+        <ul data-aos="fade-right" data-aos-delay="100">
+            <li>Medical and booking data are typically retained for up to 7 years, unless a longer period is required for legal or regulatory reasons.</li>
+            <li>Affiliate data is retained for the duration of your participation and for accounting purposes.</li>
+        </ul>
+
+        <h3 data-aos="fade-down">9. International Data Transfers</h3>
+        <p data-aos="fade-right">As we operate in Albania and serve clients from the UK and EU, your data may be transferred and processed outside your home country. We ensure appropriate safeguards are in place to protect your data.</p>
+
+        <h3 data-aos="fade-down">10. Changes to this Policy</h3>
+        <p data-aos="fade-right">We may update this Privacy Policy from time to time. Updates will be posted on this page with the revised date.</p>
+
+        <h3 data-aos="fade-down">11. Contact</h3>
+        <p data-aos="fade-right">For questions, concerns, or data requests, please contact: <a href="mailto:info@dentalhavens.com">info@dentalhavens.com</a></p>
     </div>
 
     <footer class="footer">
         <div class="container text-center text-white">
-          <div class="footer-brand mt-3">
-            <h3>DentalHavens</h3>
-            <p>Your smile, our priority. Trusted dental care since 2025.</p>
-          </div>
-          <nav class="footer-nav mt-4">
-            <a href="/" class="text-white mx-3">Home</a>
-            <a href="/services" class="text-white mx-3">Services</a>
-            <a href="/contact" class="text-white mx-3">Contact</a>
-          </nav>
-          <div class="social-media mt-4">
-            <!-- <a href="https://facebook.com" class="social-icon mx-2"><i class="fab fa-facebook"></i></a> -->
-            <a href="https://instagram.com" class="social-icon mx-2"><i class="fab fa-instagram"></i></a>
-            <a href="https://x.com" class="social-icon mx-2"><i class="fab fa-x-twitter"></i></a>
-      </div>
-          <div class="contact-info mt-4">
-            <p>Email: <a href="mailto:info@dentalhavens.com" class="text-white">info@dentalhavens.com</a></p>
-          </div>
-          <div class="legal-links mt-4">
-            <a href="{% url 'terms_view' %}" class="text-white mx-3">Terms & Conditions</a>
-            <a href="{% url 'privacy_view' %}" class="text-white mx-3">Privacy Policy</a>
-          </div>
-          <div class="mt-4">
-            <p>&copy; 2025 DentalHavens. All Rights Reserved.</p>
-          </div>
+            <div class="footer-brand mt-3">
+                <h3>DentalHavens</h3>
+                <p>Your smile, our priority. Trusted dental care since 2025.</p>
+            </div>
+            <nav class="footer-nav mt-4">
+                <a href="/" class="text-white mx-3">Home</a>
+                <a href="/services" class="text-white mx-3">Services</a>
+                <a href="/contact" class="text-white mx-3">Contact</a>
+            </nav>
+            <div class="social-media mt-4">
+                <!-- <a href="https://facebook.com" class="social-icon mx-2"><i class="fab fa-facebook"></i></a> -->
+                <a href="https://instagram.com" class="social-icon mx-2"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com" class="social-icon mx-2"><i class="fab fa-x-twitter"></i></a>
+            </div>
+            <div class="contact-info mt-4">
+                <p>Email: <a href="mailto:info@dentalhavens.com" class="text-white">info@dentalhavens.com</a></p>
+            </div>
+            <div class="legal-links mt-4">
+                <a href="{% url 'terms_view' %}" class="text-white mx-3">Terms & Conditions</a>
+                <a href="{% url 'privacy_view' %}" class="text-white mx-3">Privacy Policy</a>
+            </div>
+            <div class="mt-4">
+                <p>© 2025 DentalHavens. All Rights Reserved.</p>
+            </div>
         </div>
-      </footer>
+    </footer>
 
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-    AOS.init({
-        duration: 1000, 
-        once: true      
-    });
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
     </script>
 </body>
 </html>

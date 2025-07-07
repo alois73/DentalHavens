@@ -1,144 +1,207 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms & Conditions | DentalHavens</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         body {
             background-color: #f9f9f9;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
-
         .navbar {
             background-color: #eaf4fc;
             padding: 15px 20px;
             display: flex;
             align-items: center;
             width: 100%;
-        }
-
-        .navbar a {
-            font-size: 24px;
-            color: #00487c;
-            font-weight: bold;
-            text-decoration: none;
-        }
-        .content {
-            padding: 50px;
-        }
-
-        .footer {
-            background-color: #021b2f;
-            padding: 40px 20px;
-            color: #ffffff;
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        .footer a {
-            color: #ffffff;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        .footer a:hover {
-            color: #00bcd4;
-        }
-        .back-button {
-            color: #ffffff;
-            background-color: #00487c;
-            font-size: 12px;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            transition: color 0.3s ease, background-color 0.3s ease;
-        }
-        .back-button:hover {
-            color: var(--accent);
-            background-color: rgba(255, 255, 255, 0.1);
+            z-index: 1000;
         }
         .navbar-brand {
             color: #00487c !important;
             font-size: 24px;
             font-weight: bold;
+            text-decoration: none;
+        }
+        .back-button {
+            color: #ffffff;
+            background-color: #00487c;
+            font-size: 14px;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: color 0.3s ease, background-color 0.3s ease;
+            margin-left: auto;
+        }
+        .back-button:hover {
+            color: #00bcd4;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .content {
+            padding: 60px 60px;
+            max-width: 1200px;
+            margin-left: 0;
+            margin-right: auto;
+            flex: 1;
+            text-align: left;
+        }
+        h2, h3 {
+            color: #00487c;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        .footer {
+            background-color: #021b2f;
+            padding: 40px 20px;
+            color: #ffffff;
+            text-align: center;
+            margin-top: auto;
+        }
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        .footer a:hover {
+            color: #00bcd4;
+        }
+        .social-media .social-icon {
+            color: #ffffff;
+            font-size: 20px;
+            margin: 0 10px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .social-media .social-icon:hover {
+            color: #00bcd4;
+            transform: scale(1.2);
+        }
+        @media (max-width: 768px) {
+            .content {
+                padding: 30px 15px;
+            }
+            h2 {
+                font-size: 1.75rem;
+            }
+            h3 {
+                font-size: 1.25rem;
+            }
         }
     </style>
 </head>
 <body>
-
+    <!-- Navbar -->
     <nav class="navbar">
         <a href="{% url 'home' %}" class="navbar-brand">DentalHavens</a>
-        <a href="#" class="back-button text-white" style="font-size: medium;" onclick="history.back()">Back</a>
+        <a href="#" class="back-button" onclick="history.back()">Back</a>
     </nav>
 
     <div class="content">
         <h2 data-aos="fade-down">Terms & Conditions</h2>
-        <p data-aos="fade-down">Welcome to DentalHavens! By accessing our website and using our services, you agree to the following terms:</p>
-        <ul>
-            <li data-aos="fade-right" data-aos-delay="100">All bookings require a service fee of €200.</li>
-            <li data-aos="fade-right" data-aos-delay="200">This fee will confirm your reservation at the clinic.</li>
-            <li data-aos="fade-right" data-aos-delay="300">Changes to bookings must be made at least 3 days before the scheduled appointment.</li>
-            <li data-aos="fade-right" data-aos-delay="400">We are not responsible for any travel disruptions beyond our control.</li>
-            <li data-aos="fade-right" data-aos-delay="500">All personal information is handled in accordance with our Privacy Policy.</li>
+        <p data-aos="fade-down" style="font-style: italic;">Last updated: 6 July 2025</p>
+
+        <h3 data-aos="fade-down">1. Introduction</h3>
+        <p data-aos="fade-right">Welcome to dentalhavens.com (“Website”), operated by Dental Havens (“we”, “us”, “our”). By accessing or using our Website and services, you (“User”, “you”) agree to be bound by these Terms & Conditions. Please read them carefully before using our services.</p>
+
+        <h3 data-aos="fade-down">2. Our Role as an Intermediary</h3>
+        <p data-aos="fade-right">Dental Havens acts solely as a facilitator and broker, connecting clients with independent dental clinics and service providers in Albania. We do not provide medical or dental services ourselves. All dental treatments are performed by third-party clinics, with whom you will enter into a direct agreement and consent.</p>
+
+        <h3 data-aos="fade-down">3. Booking Process</h3>
+        <p data-aos="fade-right">You may request information, quotes, or bookings via our Website, email, WhatsApp, or other communication channels.</p>
+        <ul data-aos="fade-right" data-aos-delay="100">
+            <li>Upon your request, we will match you with suitable clinics and assist in organizing dental treatment, travel, accommodation, and tourism packages.</li>
+            <li>Final treatment plans, costs, and consent forms are provided by the clinic. You are responsible for reviewing and signing all medical documents directly with the clinic.</li>
         </ul>
-        
-        <h3 data-aos="fade-down">Additional Terms & Conditions</h3>
-        <ul>
-            <li data-aos="fade-right" data-aos-delay="100"><strong>Booking and Payment:</strong> A €200 deposit is required to secure your appointment. This deposit is 50% refundable if cancellation is made at least 3 days before the appointment. The remaining balance should be paid after the treatment is completed.</li>
-            <li data-aos="fade-right" data-aos-delay="200"><strong>Cancellation and Refund Policy:</strong> Cancellations made at least 3 days before the appointment are eligible for a 50% refund of the deposit (€100). Cancellations within less than 3 days are non-refundable.</li>
-            <li data-aos="fade-right" data-aos-delay="300"><strong>Treatment Modifications & Refunds:</strong> If a procedure is deemed unsuitable after examination, alternative treatments will be suggested. Declining alternatives may result in a partial refund, excluding consultation fees. Once treatment has started, refunds are not available.</li>
-            <li data-aos="fade-right" data-aos-delay="400"><strong>Rescheduling:</strong> Patients may reschedule up to 3 days before the original date without extra charges. Late rescheduling may incur a €50 fee.</li>
-            <li data-aos="fade-right" data-aos-delay="500"><strong>Liability Disclaimer:</strong> DentalHavens is not responsible for complications arising due to failure to follow post-treatment care instructions. Travel expenses or missed appointments are not covered.</li>
-            <li data-aos="fade-right" data-aos-delay="550"><strong>Patient Conduct & Eligibility:</strong> Patients must provide accurate medical history. Failure to disclose conditions may result in refusal of treatment. Disruptive behavior may lead to termination of the appointment without refund.</li>
-            <li data-aos="fade-right" data-aos-delay="600"><strong>Insurance & Legal Compliance:</strong> DentalHavens does not directly handle insurance claims. Disputes will be resolved under local jurisdiction laws.</li>
+
+        <h3 data-aos="fade-down">4. Liability Disclaimer</h3>
+        <p data-aos="fade-right">Dental Havens is not responsible for the quality, outcome, or results of any dental or medical treatment provided by third-party clinics.</p>
+        <ul data-aos="fade-right" data-aos-delay="100">
+            <li>We do not provide medical advice. All information on our Website is for informational purposes only.</li>
+            <li>Any complaints, disputes, or issues regarding treatment must be addressed directly with the clinic or provider.</li>
+            <li>We are not liable for any loss, injury, or damages arising from your use of our services or the services of third-party providers.</li>
         </ul>
-        
-        <p data-aos="fade-right">For any questions, contact us at <a href="mailto:info@dentalhavens.com">info@dentalhavens.com</a>.</p>
+
+        <h3 data-aos="fade-down">5. Cancellation & Refund Policy</h3>
+        <p data-aos="fade-right">Cancellations must be communicated to us as soon as possible.</p>
+        <ul data-aos="fade-right" data-aos-delay="100">
+            <li>Refunds for travel, accommodation, or treatment deposits are subject to the terms of the respective third-party providers (clinics, hotels, airlines, etc.).</li>
+            <li>Dental Havens does not guarantee refunds for services not rendered by third parties.</li>
+        </ul>
+
+        <h3 data-aos="fade-down">6. Affiliate Program Terms</h3>
+        <p data-aos="fade-right">Affiliates may join our program to refer clients using unique promo codes.</p>
+        <ul data-aos="fade-right" data-aos-delay="100">
+            <li>Commissions range from €25 to €70 per successful referral, paid after the referred client completes their treatment.</li>
+            <li>Affiliates must comply with all applicable laws and our program guidelines.</li>
+            <li>We reserve the right to modify or terminate the affiliate program at any time, with reasonable notice.</li>
+            <li>Fraudulent or unethical referrals will result in removal from the program and forfeiture of commissions.</li>
+        </ul>
+
+        <h3 data-aos="fade-down">7. Intellectual Property</h3>
+        <p data-aos="fade-right">All content on this Website, including text, images, logos, and trademarks, is the property of Dental Havens or its licensors. Unauthorized use is prohibited.</p>
+
+        <h3 data-aos="fade-down">8. Governing Law</h3>
+        <p data-aos="fade-right">These Terms & Conditions are governed by the laws of Albania. We acknowledge and comply with applicable provisions of the EU General Data Protection Regulation (GDPR) and UK consumer protection laws, to the extent they apply to our services.</p>
+
+        <h3 data-aos="fade-down">9. Amendments</h3>
+        <p data-aos="fade-right">We may update these Terms & Conditions from time to time. Changes will be posted on this page with the updated date.</p>
+
+        <h3 data-aos="fade-down">10. Contact</h3>
+        <p data-aos="fade-right">For any questions regarding these Terms & Conditions, please contact us at: <a href="mailto:info@dentalhavens.com">info@dentalhavens.com</a></p>
     </div>
 
     <footer class="footer">
         <div class="container text-center text-white">
-          <div class="footer-brand mt-3">
-            <h3>DentalHavens</h3>
-            <p>Your smile, our priority. Trusted dental care since 2025.</p>
-          </div>
-          <nav class="footer-nav mt-4">
-            <a href="/" class="text-white mx-3">Home</a>
-            <a href="/services" class="text-white mx-3">Services</a>
-            <a href="/contact" class="text-white mx-3">Contact</a>
-          </nav>
-          <div class="social-media mt-4">
-            <!-- <a href="https://facebook.com" class="social-icon mx-2"><i class="fab fa-facebook"></i></a> -->
-            <a href="https://instagram.com" class="social-icon mx-2"><i class="fab fa-instagram"></i></a>
-            <a href="https://x.com" class="social-icon mx-2"><i class="fab fa-x-twitter"></i></a>
-      </div>
-          <div class="contact-info mt-4">
-            <p>Email: <a href="mailto:info@dentalhavens.com" class="text-white">info@dentalhavens.com</a></p>
-          </div>
-          <div class="legal-links mt-4">
-            <a href="{% url 'terms_view' %}" class="text-white mx-3">Terms & Conditions</a>
-            <a href="{% url 'privacy_view' %}" class="text-white mx-3">Privacy Policy</a>
-          </div>
-          <div class="mt-4">
-            <p>&copy; 2025 DentalHavens. All Rights Reserved.</p>
-          </div>
+            <div class="footer-brand mt-3">
+                <h3>DentalHavens</h3>
+                <p>Your smile, our priority. Trusted dental care since 2025.</p>
+            </div>
+            <nav class="footer-nav mt-4">
+                <a href="/" class="text-white mx-3">Home</a>
+                <a href="/services" class="text-white mx-3">Services</a>
+                <a href="/contact" class="text-white mx-3">Contact</a>
+            </nav>
+            <div class="social-media mt-4">
+                <!-- <a href="https://facebook.com" class="social-icon mx-2"><i class="fab fa-facebook"></i></a> -->
+                <a href="https://instagram.com" class="social-icon mx-2"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com" class="social-icon mx-2"><i class="fab fa-x-twitter"></i></a>
+            </div>
+            <div class="contact-info mt-4">
+                <p>Email: <a href="mailto:info@dentalhavens.com" class="text-white">info@dentalhavens.com</a></p>
+            </div>
+            <div class="legal-links mt-4">
+                <a href="{% url 'terms_view' %}" class="text-white mx-3">Terms & Conditions</a>
+                <a href="{% url 'privacy_view' %}" class="text-white mx-3">Privacy Policy</a>
+            </div>
+            <div class="mt-4">
+                <p>© 2025 DentalHavens. All Rights Reserved.</p>
+            </div>
         </div>
-      </footer>
+    </footer>
 
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-    AOS.init({
-        duration: 1000, 
-        once: true      
-    });
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
     </script>
 </body>
 </html>
-
