@@ -1,7 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Our Partner Clinics - DentalHavens</title>
@@ -116,6 +116,7 @@
         .introduction {
             padding: 2rem 1rem;
             min-height: auto;
+            margin-top: 150px;
         }
         .introduction-grid {
             display: grid;
@@ -318,21 +319,27 @@
                 margin: 0.5rem 0;
                 justify-content: center;
             }
-            .introduction-grid, .whyus-grid {
+            .introduction-grid {
+                grid-template-columns: 1fr;
+                margin: 0 auto;
+                padding: 0 10px; /* Added padding to prevent overflow */
+            }
+            .introduction-grid > div {
+                width: 100%; /* Ensure each grid item takes full width */
+                margin: 0 auto; /* Center align within the grid */
+            }
+            .intro-card, .intro-card img, .intro-card .map-container, .intro-card iframe {
+                max-width: 100%; /* Prevent overflow */
+                width: 100%; /* Ensure full width within container */
+            }
+            .intro-card iframe {
+                height: 150px; /* Reduced height for mobile to fit */
+            }
+            .whyus-grid {
                 grid-template-columns: 1fr;
             }
             .intro-card, .whyus-card {
                 margin: 1rem 0;
-            }
-            .intro-card iframe {
-                height: 100%;
-                width: 100%;
-            }
-            .intro-card h2 {
-                font-size: 1.5rem;
-            }
-            .intro-card h4 {
-                font-size: 1.1rem;
             }
             .whyus-card h1 {
                 font-size: 2rem;
@@ -390,246 +397,244 @@
                 padding: 1.5rem 0.5rem;
             }
             .footer-nav a, .legal-links a {
-                margin-left: 1.3rem 0;
+                margin: 0 0.3rem;
             }
         }
     </style>
-    </head>
-    <body>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid d-flex align-items-center w-100">
+            <!-- Logo -->
+            <a class="navbar-brand ps-3" href="{% url 'home' %}">DentalHavens</a>
 
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid d-flex align-items-center w-100">
-                <!-- Logo -->
-                <a class="navbar-brand ps-3" href="{% url 'home' %}">DentalHavens</a>
-        
-                <!-- Toggle button for mobile view -->
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav"
-                    aria-controls="navbarNav"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-        
-                <!-- Navigation links -->
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <nav class="nav d-flex ms-auto me-5">
-                        <a href="{% url 'home' %}" class="nav-link">Home</a>
-                        <a href="{% url 'services' %}" class="nav-link">Services</a>
-                        <a href="{% url 'contact' %}" class="nav-link">Contact Us</a>
-                        <a href="{% url 'partner_view' %}" class="nav-link active">Our Partners</a>
-                        <a href="{% url 'affiliate_program' %}" class="nav-link">Affiliate Program</a>
-                    </nav>
-                </div>
-            </div>
-        </nav>
+            <!-- Toggle button for mobile view -->
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="rect" data-aos="fade-up">
-                <h1 data-aos="fade-up">Our Trusted Partner Clinic</h1>
-                <p class="lead mt-3" data-aos="fade-up">World-class dental care with cutting-edge technology and compassionate professionals.</p>
-            </div>
-        </section>
-
-        <!-- Introduction Section -->
-        <section class="introduction" style="margin-top: 150px;">
-            <div class="introduction-grid">
-                <!-- Card 1: Logo and Rating -->
-                <div class="d-flex flex-column align-items-center justify-content-center" data-aos="fade-right">
-                    <img src="{% static 'clinic/andent-logo.png' %}" alt="Clinic Logo" class="logo-img">
-                    <div class="mt-3 text-warning fs-4">★★★★★</div>
-                </div>
-                <!-- Card 2: Business Award and Map -->
-                <div class="intro-card" data-aos="fade-left">
-                    <h2>🏆 Business of the Year 2025</h2>
-                    <h4>📍 In the heart of Tirana</h4>
-                    <p class="mb-0">Andent Clinic is a leading dental clinic in Tirana, Albania, known for its state-of-the-art facilities and exceptional patient care.</p>
-                    <div class="map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29971.19894869705!2d19.78800022797786!3d41.32754636691607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13503108638b1e0f%3A0x9eec65e0fdad4804!2sTirana%2C%20Albania!5e0!3m2!1sen!2s!4v1611814716741!5m2!1sen!2s"
-                            frameborder="0" 
-                            allowfullscreen 
-                            aria-hidden="false" 
-                            tabindex="0">
-                        </iframe>
-                    </div>
-                </div>
-                <!-- Card 3: Clinic Description -->
-                <div class="intro-card" data-aos="fade-up-right">
-                    <h2>Tirana's Top Dental Clinic</h2>
-                    <p>We are devoted to delivering remarkable results for all of our orthodontic treatments. Take the first step towards your dream smile with our personalised care.</p>
-                </div>
-                <!-- Card 4: Clinic Image -->
-                <div data-aos="fade-up-left">
-                    <img src="{% static 'clinic/dental tourism.png' %}" alt="Clinic Business Card" class="img-fluid rounded-3">
-                </div>
-            </div>
-        </section>
-
-        <!-- Why Us Section -->
-        <section class="whyus-section my-5">
-            <div class="container text-center mb-4" data-aos="fade-down">
-                <h1 style="color: #27A187;">Why Us?</h1>
-            </div>
-            <div class="whyus-grid" data-aos="fade-right">
-                <div class="whyus-card">
-                    <h3>Going the extra mile for your smile</h3>
-                    <p>Our advanced technology and expertise in dental implants ensure strong, lasting results. From checkups to precise implant treatments, we’re here to help you maintain a confident smile for years to come.</p>
-                    <!-- <img src="{% static 'images/logo.png' %}" class="img-fluid mt-3" style="max-width: 150px; height: auto;" alt="DentalHavens Logo"> -->
-                </div>
-                <div class="whyus-card image-card" data-aos="fade-left">
-                    <img src="{% static 'clinic/wall1.png' %}" alt="Clinic Interior">
-                </div>
-            </div>
-        </section>
-
-        <!-- Our Doctors Section -->
-        <section class="container py-5">
-            <h1 class="text-center" style="color: #27A187;" data-aos="fade-down">Meet Our Doctors</h1>
-            <div class="doctors-container" data-aos="fade-up">
-                <div class="doctors-card">
-                    <img src="{% static 'staff/anduela.jpg' %}" alt="Doctor 1">
-                    <h5>Dr. Anduela Çurmaku</h5>
-                    <!-- <p>Orthodontist</p> -->
-                </div>
-                <div class="doctors-card">
-                    <img src="{% static 'staff/emanuela.jpg' %}" alt="Doctor 2">
-                    <h5>Dr. Emanuela</h5>
-                    <!-- <p>Endodontist</p> -->
-                </div>
-                <div class="doctors-card">
-                    <img src="{% static 'staff/ermal.jpeg' %}" alt="Doctor 3">
-                    <h5>Dr. Ermal</h5>
-                    <!-- <p>Periodontist</p> -->
-                </div>
-                <div class="doctors-card">
-                    <img src="{% static 'staff/florida.jpeg' %}" alt="Doctor 4">
-                    <h5>Dr. Florida</h5>
-                    <!-- <p>Pediatric Dentist</p> -->
-                </div>
-                <div class="doctors-card">
-                    <img src="{% static 'staff/iva.jpg' %}" alt="Doctor 5">
-                    <h5>Dr. Iva Dervishi</h5>
-                    <!-- <p>Prosthodontist</p> -->
-                </div>
-                <div class="doctors-card">
-                    <img src="{% static 'staff/ira.jpg' %}" alt="Doctor 6">
-                    <h5>Dr. Ira Dalipi</h5>
-                    <!-- <p>Oral Surgeon</p> -->
-                </div>
-                <div class="doctors-card">
-                    <img src="{% static 'staff/julinda.jpg' %}" alt="Doctor 7">
-                    <h5>Dr. Julinda Kaba</h5>
-                    <!-- <p>Cosmetic Dentist</p> -->
-                </div>
-                <div class="doctors-card">
-                    <img src="{% static 'staff/laurent.jpeg' %}" alt="Doctor 7">
-                    <h5>Dr. Laurent</h5>
-                    <!-- <p>Cosmetic Dentist</p> -->
-                </div>
-                <div class="doctors-card">
-                    <img src="{% static 'staff/orhan.jpg' %}" alt="Doctor 7">
-                    <h5>Dr. Orhan Et'hemi</h5>
-                    <!-- <p>Cosmetic Dentist</p> -->
-                </div>
-                <div class="doctors-card">
-                    <img src="{% static 'staff/reti.jpg' %}" alt="Doctor 7">
-                    <h5>Dr. Reti Backa</h5>
-                    <!-- <p>Cosmetic Dentist</p> -->
-                </div>
-                <div class="doctors-card">
-                    <img src="{% static 'staff/safjela.jpg' %}" alt="Doctor 7">
-                    <h5>Dr. Safjela</h5>
-                    <!-- <p>Cosmetic Dentist</p> -->
-                </div>
-                <div class="doctors-card">
-                    <img src="{% static 'staff/silvana.jpg' %}" alt="Doctor 7">
-                    <h5>Dr. Silvana Meça</h5>
-                    <!-- <p>Cosmetic Dentist</p> -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials Video Section -->
-        <section class="container py-5">
-            <h1 class="text-center" style="color: #27A187;">Patient Testimonials</h1>
-            <p class="text-center mb-4">Hear what our patients say about their experience</p>
-        
-            <div class="row g-4">
-                <div class="col-12 col-md-6">
-                    <div class="testimonial-card">
-                        <video 
-                            controls 
-                            preload="metadata"
-                            style="width: 100%; border-radius: 16px;"
-                            poster="{% static 'testimonials/thumbnail.webp' %}">
-                            <source src="{% static 'testimonials/george_testimonial.mp4' %}" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="testimonial-card">
-                        <video 
-                            controls 
-                            preload="metadata"
-                            style="width: 100%; border-radius: 16px;"
-                            poster="{% static 'testimonials/thumbnail.webp' %}">
-                            <source src="{% static 'testimonials/mario-testemonial.mp4' %}" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-brand">
-                    <h3>DentalHavens</h3>
-                    <p>Your smile, our priority. Trusted dental care since 2025.</p>
-                </div>
-                <nav class="footer-nav mt-4" >
-                    <a href="/">Home</a>
-                    <a href="/services">Services</a>
-                    <a href="/contact">Contact</a>
+            <!-- Navigation links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <nav class="nav d-flex ms-auto me-5">
+                    <a href="{% url 'home' %}" class="nav-link">Home</a>
+                    <a href="{% url 'services' %}" class="nav-link">Services</a>
+                    <a href="{% url 'contact' %}" class="nav-link">Contact Us</a>
+                    <a href="{% url 'partner_view' %}" class="nav-link active">Our Partners</a>
+                    <a href="{% url 'affiliate_program' %}" class="nav-link">Affiliate Program</a>
                 </nav>
-                <div class="social-media mt-4">
-                    <!-- <a href="https://facebook.com" class="social-icon mx-2"><i class="fab fa-facebook"></i></a> -->
-                    <a href="https://instagram.com" class="social-icon mx-2"><i class="fab fa-instagram"></i></a>
-                    <a href="https://x.com" class="social-icon mx-2"><i class="fab fa-x-twitter"></i></a>
-                </div>
-                <div class="contact-info mt-4">
-                    <p>Email: <a href="mailto:info@dentalhavens.com">info@dentalhavens.com</a></p>
-                </div>
-                <div class="legal-links mt-4">
-                    <a href="{% url 'terms_view' %}">Terms & Conditions</a>
-                    <a href="{% url 'privacy_view' %}">Privacy Policy</a>
-                </div>
-                <div class="mt-4">
-                    <p>© 2025 DentalHavens. All Rights Reserved.</p>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="rect" data-aos="fade-up">
+            <h1 data-aos="fade-up">Our Trusted Partner Clinic</h1>
+            <p class="lead mt-3" data-aos="fade-up">World-class dental care with cutting-edge technology and compassionate professionals.</p>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="introduction">
+        <div class="introduction-grid">
+            <!-- Card 1: Logo and Rating -->
+            <div class="d-flex flex-column align-items-center justify-content-center" data-aos="fade-right">
+                <img src="{% static 'clinic/andent-logo.png' %}" alt="Clinic Logo" class="logo-img">
+                <div class="mt-3 text-warning fs-4">★★★★★</div>
+            </div>
+            <!-- Card 2: Business Award and Map -->
+            <div class="intro-card" data-aos="fade-left">
+                <h2>🏆 Business of the Year 2025</h2>
+                <h4>📍 In the heart of Tirana</h4>
+                <p class="mb-0">Andent Clinic is a leading dental clinic in Tirana, Albania, known for its state-of-the-art facilities and exceptional patient care.</p>
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29971.19894869705!2d19.78800022797786!3d41.32754636691607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13503108638b1e0f%3A0x9eec65e0fdad4804!2sTirana%2C%20Albania!5e0!3m2!1sen!2s!4v1611814716741!5m2!1sen!2s"
+                        frameborder="0" 
+                        allowfullscreen 
+                        aria-hidden="false" 
+                        tabindex="0">
+                    </iframe>
                 </div>
             </div>
-        </footer>
+            <!-- Card 3: Clinic Description -->
+            <div class="intro-card" data-aos="fade-up-right">
+                <h2>Tirana's Top Dental Clinic</h2>
+                <p>We are devoted to delivering remarkable results for all of our orthodontic treatments. Take the first step towards your dream smile with our personalised care.</p>
+            </div>
+            <!-- Card 4: Clinic Image -->
+            <div data-aos="fade-up-left">
+                <img src="{% static 'clinic/dental tourism.png' %}" alt="Clinic Business Card" class="img-fluid rounded-3">
+            </div>
+        </div>
+    </section>
 
-        <!-- Bootstrap and Google Translate Scripts -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script>
-            AOS.init({
-                duration: 1000, 
-                once: true      
-            });
-        </script>
-    </body>
+    <!-- Why Us Section -->
+    <section class="whyus-section my-5">
+        <div class="container text-center mb-4" data-aos="fade-down">
+            <h1 style="color: #27A187;">Why Us?</h1>
+        </div>
+        <div class="whyus-grid" data-aos="fade-right">
+            <div class="whyus-card">
+                <h3>Going the extra mile for your smile</h3>
+                <p>Our advanced technology and expertise in dental implants ensure strong, lasting results. From checkups to precise implant treatments, we’re here to help you maintain a confident smile for years to come.</p>
+                <!-- <img src="{% static 'images/logo.png' %}" class="img-fluid mt-3" style="max-width: 150px; height: auto;" alt="DentalHavens Logo"> -->
+            </div>
+            <div class="whyus-card image-card" data-aos="fade-left">
+                <img src="{% static 'clinic/wall1.png' %}" alt="Clinic Interior">
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Doctors Section -->
+    <section class="container py-5">
+        <h1 class="text-center" style="color: #27A187;" data-aos="fade-down">Meet Our Doctors</h1>
+        <div class="doctors-container" data-aos="fade-up">
+            <div class="doctors-card">
+                <img src="{% static 'staff/anduela.jpg' %}" alt="Doctor 1">
+                <h5>Dr. Anduela Çurmaku</h5>
+                <!-- <p>Orthodontist</p> -->
+            </div>
+            <div class="doctors-card">
+                <img src="{% static 'staff/emanuela.jpg' %}" alt="Doctor 2">
+                <h5>Dr. Emanuela</h5>
+                <!-- <p>Endodontist</p> -->
+            </div>
+            <div class="doctors-card">
+                <img src="{% static 'staff/ermal.jpeg' %}" alt="Doctor 3">
+                <h5>Dr. Ermal</h5>
+                <!-- <p>Periodontist</p> -->
+            </div>
+            <div class="doctors-card">
+                <img src="{% static 'staff/florida.jpeg' %}" alt="Doctor 4">
+                <h5>Dr. Florida</h5>
+                <!-- <p>Pediatric Dentist</p> -->
+            </div>
+            <div class="doctors-card">
+                <img src="{% static 'staff/iva.jpg' %}" alt="Doctor 5">
+                <h5>Dr. Iva Dervishi</h5>
+                <!-- <p>Prosthodontist</p> -->
+            </div>
+            <div class="doctors-card">
+                <img src="{% static 'staff/ira.jpg' %}" alt="Doctor 6">
+                <h5>Dr. Ira Dalipi</h5>
+                <!-- <p>Oral Surgeon</p> -->
+            </div>
+            <div class="doctors-card">
+                <img src="{% static 'staff/julinda.jpg' %}" alt="Doctor 7">
+                <h5>Dr. Julinda Kaba</h5>
+                <!-- <p>Cosmetic Dentist</p> -->
+            </div>
+            <div class="doctors-card">
+                <img src="{% static 'staff/laurent.jpeg' %}" alt="Doctor 7">
+                <h5>Dr. Laurent</h5>
+                <!-- <p>Cosmetic Dentist</p> -->
+            </div>
+            <div class="doctors-card">
+                <img src="{% static 'staff/orhan.jpg' %}" alt="Doctor 7">
+                <h5>Dr. Orhan Et'hemi</h5>
+                <!-- <p>Cosmetic Dentist</p> -->
+            </div>
+            <div class="doctors-card">
+                <img src="{% static 'staff/reti.jpg' %}" alt="Doctor 7">
+                <h5>Dr. Reti Backa</h5>
+                <!-- <p>Cosmetic Dentist</p> -->
+            </div>
+            <div class="doctors-card">
+                <img src="{% static 'staff/safjela.jpg' %}" alt="Doctor 7">
+                <h5>Dr. Safjela</h5>
+                <!-- <p>Cosmetic Dentist</p> -->
+            </div>
+            <div class="doctors-card">
+                <img src="{% static 'staff/silvana.jpg' %}" alt="Doctor 7">
+                <h5>Dr. Silvana Meça</h5>
+                <!-- <p>Cosmetic Dentist</p> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Video Section -->
+    <section class="container py-5">
+        <h1 class="text-center" style="color: #27A187;">Patient Testimonials</h1>
+        <p class="text-center mb-4">Hear what our patients say about their experience</p>
+
+        <div class="row g-4">
+            <div class="col-12 col-md-6">
+                <div class="testimonial-card">
+                    <video 
+                        controls 
+                        preload="metadata"
+                        style="width: 100%; border-radius: 16px;"
+                        poster="{% static 'testimonials/thumbnail.webp' %}">
+                        <source src="{% static 'testimonials/george_testimonial.mp4' %}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="testimonial-card">
+                    <video 
+                        controls 
+                        preload="metadata"
+                        style="width: 100%; border-radius: 16px;"
+                        poster="{% static 'testimonials/thumbnail.webp' %}">
+                        <source src="{% static 'testimonials/mario-testemonial.mp4' %}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-brand">
+                <h3>DentalHavens</h3>
+                <p>Your smile, our priority. Trusted dental care since 2025.</p>
+            </div>
+            <nav class="footer-nav mt-4">
+                <a href="/">Home</a>
+                <a href="/services">Services</a>
+                <a href="/contact">Contact</a>
+            </nav>
+            <div class="social-media mt-4">
+                <!-- <a href="https://facebook.com" class="social-icon mx-2"><i class="fab fa-facebook"></i></a> -->
+                <a href="https://instagram.com" class="social-icon mx-2"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com" class="social-icon mx-2"><i class="fab fa-x-twitter"></i></a>
+            </div>
+            <div class="contact-info mt-4">
+                <p>Email: <a href="mailto:info@dentalhavens.com">info@dentalhavens.com</a></p>
+            </div>
+            <div class="legal-links mt-4">
+                <a href="{% url 'terms_view' %}">Terms & Conditions</a>
+                <a href="{% url 'privacy_view' %}">Privacy Policy</a>
+            </div>
+            <div class="mt-4">
+                <p>© 2025 DentalHavens. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap and Google Translate Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, 
+            once: true      
+        });
+    </script>
+</body>
 </html>
