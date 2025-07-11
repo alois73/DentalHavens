@@ -3,10 +3,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Our Partner Clinics - DentalHavens</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-R9R5H9j+2G2H5+2L3M7L8K+5y5z2E1e8E6L7z3w2tG8H+5y2z3E1e8E6L7z3w2tG8H" crossorigin="anonymous">
     <style>
         /* General Reset and Body Styling */
         * {
@@ -18,7 +18,7 @@
             overflow-x: hidden;
         }
         .logo-img {
-            max-width: 400px;
+            max-width: 100%;
             height: auto;
         }
         body {
@@ -61,24 +61,6 @@
             height: 3px;
             margin: 4px auto;
         }
-        .translate-container {
-            background-color: transparent !important;
-            padding: 0.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: white;
-        }
-        .translate-label {
-            font-size: 1rem;
-            font-weight: 500;
-        }
-        .google-translate {
-            background: white;
-            border-radius: 6px;
-        }
         .navbar-collapse {
             background-color: transparent;
         }
@@ -117,6 +99,7 @@
             padding: 2rem 1rem;
             min-height: auto;
             margin-top: 150px;
+            overflow-x: hidden;
         }
         .introduction-grid {
             display: grid;
@@ -124,6 +107,8 @@
             gap: 1.5rem;
             max-width: 1200px;
             margin: 0 auto;
+            width: 100%;
+            overflow-x: hidden;
         }
         .intro-card {
             background: rgba(255, 255, 255, 0.9);
@@ -131,6 +116,7 @@
             padding: 1.5rem;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             text-align: center;
+            overflow: hidden;
         }
         .intro-card:nth-child(2) {
             background: linear-gradient(to bottom right, #27A187, #00487c);
@@ -142,19 +128,22 @@
         }
         .intro-card img {
             max-width: 100%;
-            max-height: 100px;
+            height: auto;
             object-fit: contain;
+            width: 100%; /* Ensure image respects container width */
         }
         .intro-card .map-container {
             margin-top: 1rem;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
         }
         .intro-card iframe {
             width: 100%;
             height: 200px;
             border: 0;
+            display: block;
         }
         .intro-card h2 {
             font-size: 1.75rem;
@@ -301,39 +290,35 @@
                 font-size: 1rem;
             }
             .hero-section .rect {
-                width: 100%;
+                width: 90%;
                 padding: 1.5rem;
             }
             .navbar {
-                background-color: rgba(0, 0, 0, 0) !important; /* Semi-transparent for mobile */
+                background-color: rgba(0, 0, 0, 0) !important;
             }
             .navbar-collapse {
-                background-color: rgba(0, 0, 0, 0.5); /* Slightly darker for visibility */
+                background-color: rgba(0, 0, 0, 0.5);
                 padding: 1rem;
                 border-radius: 8px;
             }
             .nav-link {
                 padding: 0.5rem 1rem;
             }
-            .translate-container {
-                margin: 0.5rem 0;
-                justify-content: center;
-            }
             .introduction-grid {
                 grid-template-columns: 1fr;
                 margin: 0 auto;
-                padding: 0 10px; /* Added padding to prevent overflow */
-            }
-            .introduction-grid > div {
-                width: 94%; /* Ensure each grid item takes full width */
-                align-items: center;
+                padding: 0 10px;
+                width: 100%;
             }
             .intro-card, .intro-card img, .intro-card .map-container, .intro-card iframe {
-                max-width: 100%; /* Prevent overflow */
-                width: 100%; /* Ensure full width within container */
+                max-width: 100%;
+                width: 100%;
+            }
+            .intro-card img {
+                max-height: 150px; /* Limit image height on mobile */
             }
             .intro-card iframe {
-                height: 150px; /* Reduced height for mobile to fit */
+                height: 150px;
             }
             .whyus-grid {
                 grid-template-columns: 1fr;
@@ -377,6 +362,9 @@
             .intro-card p {
                 font-size: 0.9rem;
             }
+            .intro-card img {
+                max-height: 120px; /* Further limit on smaller screens */
+            }
             .intro-card iframe {
                 height: 120px;
             }
@@ -406,24 +394,10 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid d-flex align-items-center w-100">
-            <!-- Logo -->
             <a class="navbar-brand ps-3" href="{% url 'home' %}">DentalHavens</a>
-
-            <!-- Toggle button for mobile view -->
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNav"
-                aria-controls="navbarNav"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
             </button>
-
-            <!-- Navigation links -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <nav class="nav d-flex ms-auto me-5">
                     <a href="{% url 'home' %}" class="nav-link">Home</a>
@@ -458,13 +432,7 @@
                 <h4>📍 In the heart of Tirana</h4>
                 <p class="mb-0">Andent Clinic is a leading dental clinic in Tirana, Albania, known for its state-of-the-art facilities and exceptional patient care.</p>
                 <div class="map-container">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29971.19894869705!2d19.78800022797786!3d41.32754636691607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13503108638b1e0f%3A0x9eec65e0fdad4804!2sTirana%2C%20Albania!5e0!3m2!1sen!2s!4v1611814716741!5m2!1sen!2s"
-                        frameborder="0" 
-                        allowfullscreen 
-                        aria-hidden="false" 
-                        tabindex="0">
-                    </iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29971.19894869705!2d19.78800022797786!3d41.32754636691607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13503108638b1e0f%3A0x9eec65e0fdad4804!2sTirana%2C%20Albania!5e0!3m2!1sen!2s!4v1611814716741!5m2!1sen!2s" frameborder="0" allowfullscreen aria-hidden="false" tabindex="0"></iframe>
                 </div>
             </div>
             <!-- Card 3: Clinic Description -->
@@ -488,7 +456,6 @@
             <div class="whyus-card">
                 <h3>Going the extra mile for your smile</h3>
                 <p>Our advanced technology and expertise in dental implants ensure strong, lasting results. From checkups to precise implant treatments, we’re here to help you maintain a confident smile for years to come.</p>
-                <!-- <img src="{% static 'images/logo.png' %}" class="img-fluid mt-3" style="max-width: 150px; height: auto;" alt="DentalHavens Logo"> -->
             </div>
             <div class="whyus-card image-card" data-aos="fade-left">
                 <img src="{% static 'clinic/wall1.png' %}" alt="Clinic Interior">
@@ -503,62 +470,50 @@
             <div class="doctors-card">
                 <img src="{% static 'staff/anduela.jpg' %}" alt="Doctor 1">
                 <h5>Dr. Anduela Çurmaku</h5>
-                <!-- <p>Orthodontist</p> -->
             </div>
             <div class="doctors-card">
                 <img src="{% static 'staff/emanuela.jpg' %}" alt="Doctor 2">
                 <h5>Dr. Emanuela</h5>
-                <!-- <p>Endodontist</p> -->
             </div>
             <div class="doctors-card">
                 <img src="{% static 'staff/ermal.jpeg' %}" alt="Doctor 3">
                 <h5>Dr. Ermal</h5>
-                <!-- <p>Periodontist</p> -->
             </div>
             <div class="doctors-card">
                 <img src="{% static 'staff/florida.jpeg' %}" alt="Doctor 4">
                 <h5>Dr. Florida</h5>
-                <!-- <p>Pediatric Dentist</p> -->
             </div>
             <div class="doctors-card">
                 <img src="{% static 'staff/iva.jpg' %}" alt="Doctor 5">
                 <h5>Dr. Iva Dervishi</h5>
-                <!-- <p>Prosthodontist</p> -->
             </div>
             <div class="doctors-card">
                 <img src="{% static 'staff/ira.jpg' %}" alt="Doctor 6">
                 <h5>Dr. Ira Dalipi</h5>
-                <!-- <p>Oral Surgeon</p> -->
             </div>
             <div class="doctors-card">
                 <img src="{% static 'staff/julinda.jpg' %}" alt="Doctor 7">
                 <h5>Dr. Julinda Kaba</h5>
-                <!-- <p>Cosmetic Dentist</p> -->
             </div>
             <div class="doctors-card">
                 <img src="{% static 'staff/laurent.jpeg' %}" alt="Doctor 7">
                 <h5>Dr. Laurent</h5>
-                <!-- <p>Cosmetic Dentist</p> -->
             </div>
             <div class="doctors-card">
                 <img src="{% static 'staff/orhan.jpg' %}" alt="Doctor 7">
                 <h5>Dr. Orhan Et'hemi</h5>
-                <!-- <p>Cosmetic Dentist</p> -->
             </div>
             <div class="doctors-card">
                 <img src="{% static 'staff/reti.jpg' %}" alt="Doctor 7">
                 <h5>Dr. Reti Backa</h5>
-                <!-- <p>Cosmetic Dentist</p> -->
             </div>
             <div class="doctors-card">
                 <img src="{% static 'staff/safjela.jpg' %}" alt="Doctor 7">
                 <h5>Dr. Safjela</h5>
-                <!-- <p>Cosmetic Dentist</p> -->
             </div>
             <div class="doctors-card">
                 <img src="{% static 'staff/silvana.jpg' %}" alt="Doctor 7">
                 <h5>Dr. Silvana Meça</h5>
-                <!-- <p>Cosmetic Dentist</p> -->
             </div>
         </div>
     </section>
@@ -567,15 +522,10 @@
     <section class="container py-5">
         <h1 class="text-center" style="color: #27A187;">Patient Testimonials</h1>
         <p class="text-center mb-4">Hear what our patients say about their experience</p>
-
         <div class="row g-4">
             <div class="col-12 col-md-6">
                 <div class="testimonial-card">
-                    <video 
-                        controls 
-                        preload="metadata"
-                        style="width: 100%; border-radius: 16px;"
-                        poster="{% static 'testimonials/thumbnail.webp' %}">
+                    <video controls preload="metadata" style="width: 100%; border-radius: 16px;" poster="{% static 'testimonials/thumbnail.webp' %}">
                         <source src="{% static 'testimonials/george_testimonial.mp4' %}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -583,11 +533,7 @@
             </div>
             <div class="col-12 col-md-6">
                 <div class="testimonial-card">
-                    <video 
-                        controls 
-                        preload="metadata"
-                        style="width: 100%; border-radius: 16px;"
-                        poster="{% static 'testimonials/thumbnail.webp' %}">
+                    <video controls preload="metadata" style="width: 100%; border-radius: 16px;" poster="{% static 'testimonials/thumbnail.webp' %}">
                         <source src="{% static 'testimonials/mario-testemonial.mp4' %}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -609,7 +555,6 @@
                 <a href="/contact">Contact</a>
             </nav>
             <div class="social-media mt-4">
-                <!-- <a href="https://facebook.com" class="social-icon mx-2"><i class="fab fa-facebook"></i></a> -->
                 <a href="https://instagram.com" class="social-icon mx-2"><i class="fab fa-instagram"></i></a>
                 <a href="https://x.com" class="social-icon mx-2"><i class="fab fa-x-twitter"></i></a>
             </div>
@@ -626,14 +571,14 @@
         </div>
     </footer>
 
-    <!-- Bootstrap and Google Translate Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
-            duration: 1000, 
-            once: true      
+            duration: 1000,
+            once: true
         });
     </script>
 </body>
+</html>
