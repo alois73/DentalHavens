@@ -81,43 +81,47 @@
             background-color: #ffffff;
             height: 100%; /* Full height */
         }
+        
+        .services-section {
+            padding: 60px 0;
+        }
+
         .service-card {
-        background-color: #ffffff;
-        border: 1px solid #e0e0e0;
-        border-radius: 12px;
-        padding: 20px; /* Slightly reduced padding for homepage */
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        text-align: center;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
 
-    .service-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
-    }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+        }
 
-    .service-image {
-        max-width: 100px;
-        margin-bottom: 15px;
-    }
+        .service-image {
+            max-width: 100px;
+            margin-bottom: 20px;
+        }
 
-    .service-title {
-        font-size: 1.2rem; /* Slightly smaller for homepage */
-        color: #00487c;
-        margin-bottom: 10px;
-        font-weight: bold;
-    }
+        .service-title {
+            font-size: 1.3rem;
+            color: #00487c;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
 
-    .service-description {
-        font-size: 0.85rem; /* Smaller text for brevity */
-        color: #666;
-        line-height: 1.4;
-        margin-bottom: 15px;
-    }
+        .service-description {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+        }
 
     .btn-primary {
         background-color: #00487c;
@@ -339,41 +343,77 @@
 <!-- Services Section -->
 <section id="services-section" class="services py-5">
     <div class="container">
-        <h2 class="text-center mb-4" data-aos="fade-down" style="color: #757575; text-transform: uppercase;">Featured Dental Services</h2>
-        <p class="text-center mb-5" data-aos="fade-up">Discover our top dental care options designed for your smile and health.</p>
-
-        <div class="row">
+        <h2 class="text-center mb-5" style="color: #00487c; font-weight: bold;" data-aos="fade-down">Our Dental Services</h2>
+        <div class="row g-4 justify-content-center">
             <!-- Dental Implants -->
-            <div class="col-md-4 col-sm-6 col-12 mb-4" data-aos="fade-up">
-                <div class="service-card">
-                    <img src="{% static 'clinic/implants.png' %}" alt="Dental Implants" class="service-image">
-                    <h3 class="service-title">Dental Implants</h3>
-                    <p class="service-description">Durable tooth roots for natural-looking replacements.</p>
-                    <a href="{% url 'services' %}" class="btn btn-primary mt-3">Learn More</a>
+            <div class="col-lg-4 col-md-6 col-12 mb-4" data-aos="fade-up">
+                <div class="service-card h-100">
+                    <div class="service-icon mb-3">
+                        <img src="{% static 'clinic/implants.png' %}" alt="Dental Implants" class="service-image">
+                    </div>
+                    <h4 class="service-title">Dental Implants</h4>
+                    <p class="service-description">Durable, artificial tooth roots to support natural-looking replacement teeth.</p>
+                    <a href="{% url 'contact' %}" class="btn btn-primary mt-auto">Learn More</a>
                 </div>
             </div>
             <!-- Cosmetic Dentistry and Veneers -->
-            <div class="col-md-4 col-sm-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="150">
-                <div class="service-card">
-                    <img src="{% static 'clinic/cosmetic.png' %}" alt="Cosmetic Dentistry and Veneers" class="service-image">
-                    <h3 class="service-title">Cosmetic Dentistry</h3>
-                    <p class="service-description">Enhance your smile with whitening and veneers.</p>
-                    <a href="{% url 'services' %}" class="btn btn-primary mt-3">Learn More</a>
+            <div class="col-lg-4 col-md-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="150">
+                <div class="service-card h-100">
+                    <div class="service-icon mb-3">
+                        <img src="{% static 'clinic/cosmetic.png' %}" alt="Cosmetic Dentistry and Veneers" class="service-image">
+                    </div>
+                    <h4 class="service-title">Cosmetic Dentistry and Veneers</h4>
+                    <p class="service-description">Transform your smile with whitening, veneers, and personalized makeovers.</p>
+                    <a href="{% url 'contact' %}" class="btn btn-primary mt-auto">Learn More</a>
+                </div>
+            </div>
+            <!-- Dental Crowns and Bridges -->
+            <div class="col-lg-4 col-md-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-card h-100">
+                    <div class="service-icon mb-3">
+                        <img src="{% static 'clinic/crown.png' %}" alt="Dental Crowns and Bridges" class="service-image">
+                    </div>
+                    <h4 class="service-title">Dental Crowns and Bridges</h4>
+                    <p class="service-description">High-quality prosthetics for damaged or missing teeth, ensuring durability.</p>
+                    <a href="{% url 'contact' %}" class="btn btn-primary mt-auto">Learn More</a>
+                </div>
+            </div>
+            <!-- Orthodontic Treatment -->
+            <div class="col-lg-4 col-md-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="450">
+                <div class="service-card h-100">
+                    <div class="service-icon mb-3">
+                        <img src="{% static 'clinic/orthodontic.png' %}" alt="Orthodontic Treatment" class="service-image">
+                    </div>
+                    <h4 class="service-title">Orthodontic Treatment</h4>
+                    <p class="service-description">Achieve straighter teeth and correct bites with orthodontic treatments.</p>
+                    <a href="{% url 'contact' %}" class="btn btn-primary mt-auto">Learn More</a>
+                </div>
+            </div>
+            <!-- Dentures -->
+            <div class="col-lg-4 col-md-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="600">
+                <div class="service-card h-100">
+                    <div class="service-icon mb-3">
+                        <img src="{% static 'clinic/dentures.png' %}" alt="Dentures" class="service-image">
+                    </div>
+                    <h4 class="service-title">Dentures</h4>
+                    <p class="service-description">Custom-made replacements for comfortable chewing, speaking, and smiling.</p>
+                    <a href="{% url 'contact' %}" class="btn btn-primary mt-auto">Learn More</a>
                 </div>
             </div>
             <!-- General Dentistry -->
-            <div class="col-md-4 col-sm-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="300">
-                <div class="service-card">
-                    <img src="{% static 'clinic/general.png' %}" alt="General Dentistry" class="service-image">
-                    <h3 class="service-title">General Dentistry</h3>
-                    <p class="service-description">Preventive care for optimal oral health.</p>
-                    <a href="{% url 'services' %}" class="btn btn-primary mt-3">Learn More</a>
+            <div class="col-lg-4 col-md-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="750">
+                <div class="service-card h-100">
+                    <div class="service-icon mb-3">
+                        <img src="{% static 'clinic/general.png' %}" alt="General Dentistry" class="service-image">
+                    </div>
+                    <h4 class="service-title">General Dentistry</h4>
+                    <p class="service-description">Preventive care, treatments, and maintenance for optimal oral health and a beautiful smile.</p>
+                    <a href="{% url 'contact' %}" class="btn btn-primary mt-auto">Learn More</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
 <!-- Tour Categories Section -->
 <section class="tour">
     <div class="container mt-5 pt-5 mb-5 pb-5">

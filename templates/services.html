@@ -48,51 +48,84 @@
             text-transform: uppercase;
         }
 
+        /* Services Section */
         .services-section {
             padding: 60px 0;
+            background: transparent !important;
+            border-radius: 15px;
+            margin: 0 15px;
         }
 
-        .service-card {
-            background-color: #ffffff;
-            border: 1px solid #e0e0e0;
-            border-radius: 12px;
-            padding: 30px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: center;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        .service-accordion {
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+        .accordion-item {
+            background: #ffffff;
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
         }
 
-        .service-image {
-            max-width: 100px;
-            margin-bottom: 20px;
+        .accordion-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 72, 124, 0.1);
         }
 
-        .service-title {
-            font-size: 1.3rem;
+        .accordion-button {
+            background-color: #00487c;
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: 600;
+            padding: 15px;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            width: 100%;
+            position: relative;
+            transition: background-color 0.3s ease;
+        }
+
+        .accordion-button::after {
+            content: "▼";
+            position: absolute;
+            right: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-button.collapsed::after {
+            transform: rotate(-90deg);
+        }
+
+        .accordion-button:hover {
+            background-color: #00365f;
+        }
+
+        .accordion-collapse {
+            background: #f9fbfd;
+            padding: 20px;
+        }
+
+        .accordion-body ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .accordion-body li {
+            margin-bottom: 15px;
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .accordion-body li strong {
             color: #00487c;
-            margin-bottom: 10px;
-            font-weight: bold;
+            font-weight: 600;
         }
-
-        .service-description {
-            font-size: 0.9rem;
-            color: #666;
-            line-height: 1.5;
-        }
-
-        .active {
-            color: #00487c;
-        }
-
         /* Footer */
         .footer {
             background-color: #021b2f;
@@ -166,7 +199,23 @@
             font-size: 24px;
             font-weight: bold;
         }
-        
+
+        @media (max-width: 768px) {
+            .category-title {
+                font-size: 1.5rem;
+            }
+            .service-list li {
+                font-size: 0.95rem;
+            }
+            .service-category {
+                padding: 15px;
+            }
+        }
+
+        /* Ensure navbar padding works with fixed-top */
+        body {
+            padding-top: 70px;
+        }
     </style>
 </head>
 <body>
@@ -210,56 +259,114 @@
         <h5 class="text-center" data-aos="fade-up">We provide a range of professional services to meet all your dental needs.</h5>
     </div>
 
-    <!-- Services Section -->
-    <section id="services-section" class="services py-5">
+    <section id="services-section" class="services-section">
         <div class="container">
-            <div class="row">
+            <div class="service-accordion" id="serviceAccordion">
+                <!-- Cleaning -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-toggle="collapse" data-target="#collapseCleaning" aria-expanded="true" aria-controls="collapseCleaning">
+                            🦷 Cleaning
+                        </button>
+                    </h2>
+                    <div id="collapseCleaning" class="accordion-collapse collapse show" data-parent="#serviceAccordion">
+                        <div class="accordion-body">
+                            <ul>
+                                <li><strong>Basic Teeth Cleaning</strong><br>A routine cleaning to remove plaque and tartar, keeping your teeth and gums healthy.</li>
+                                <li><strong>Teeth Cleaning with Bicarbonate</strong><br>Includes a fine powder spray (bicarbonate) to deeply clean and brighten your teeth by removing surface stains.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aesthetic Dentistry -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseAesthetic" aria-expanded="false" aria-controls="collapseAesthetic">
+                            ✨ Aesthetic Dentistry
+                        </button>
+                    </h2>
+                    <div id="collapseAesthetic" class="accordion-collapse collapse" data-parent="#serviceAccordion">
+                        <div class="accordion-body">
+                            <ul>
+                                <li><strong>Professional Teeth Whitening with Laser</strong><br>A laser-activated whitening treatment that brightens your smile in one visit.</li>
+                                <li><strong>Piercing</strong><br>Dental or oral piercing performed safely and hygienically by a professional.</li>
+                                <li><strong>Fillings (Grade 1 to Grade 4)</strong><br>Used to treat cavities or broken teeth. Grade 1 is a small filling; Grade 4 is more complex and covers a larger area.</li>
+                                <li><strong>Tooth Reconstruction with Pins</strong><br>When a tooth is badly damaged, we use tiny pins to support a stronger filling and rebuild the tooth.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prosthetic Dentistry -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseProsthetic" aria-expanded="false" aria-controls="collapseProsthetic">
+                            👑 Prosthetic Dentistry (Crowns and Dentures)
+                        </button>
+                    </h2>
+                    <div id="collapseProsthetic" class="accordion-collapse collapse" data-parent="#serviceAccordion">
+                        <div class="accordion-body">
+                            <ul>
+                                <li><strong>Porcelain or Ceramic Crowns</strong><br>Natural-looking caps that cover damaged teeth to restore their shape and strength.</li>
+                                <li><strong>Zirconia Crowns</strong><br>Strong, durable, and very natural-looking—great for visible front teeth.</li>
+                                <li><strong>E-max Crowns</strong><br>A high-end ceramic crown with excellent aesthetics, often used for front teeth.</li>
+                                <li><strong>E-max Veneers</strong><br>Thin ceramic covers placed over the front of teeth to improve appearance.</li>
+                                <li><strong>Full Removable Dentures (2 Arches)</strong><br>A full set of removable teeth to replace all missing upper and lower teeth.</li>
+                                <li><strong>Metal-Based Partial Dentures</strong><br>A metal-supported denture for patients missing only some teeth, offering more stability.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Orthodontics -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseOrthodontics" aria-expanded="false" aria-controls="collapseOrthodontics">
+                            😁 Orthodontics
+                        </button>
+                    </h2>
+                    <div id="collapseOrthodontics" class="accordion-collapse collapse" data-parent="#serviceAccordion">
+                        <div class="accordion-body">
+                            <ul>
+                                <li><strong>Removable Braces</strong><br>Custom-made devices you can take out, used to straighten teeth.</li>
+                                <li><strong>Removable Braces for Both Arches</strong><br>A set of removable braces for both upper and lower teeth.</li>
+                                <li><strong>Clear Aligners (Transparent Trays)</strong><br>Nearly invisible trays that gradually move teeth into place—comfortable and discreet.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Dental Implants -->
-                <div class="col-md-4 col-sm-6 col-12 mb-4" data-aos="fade-up">
-                    <div class="service-card">
-                        <img src="{% static 'clinic/implants.png' %}" alt="Dental Implants" class="service-image">
-                        <h4 class="service-title">Dental Implants</h4>
-                        <p class="service-description">Durable, artificial tooth roots to support natural-looking replacement teeth.</p>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseImplants" aria-expanded="false" aria-controls="collapseImplants">
+                            🦷 Dental Implants
+                        </button>
+                    </h2>
+                    <div id="collapseImplants" class="accordion-collapse collapse" data-parent="#serviceAccordion">
+                        <div class="accordion-body">
+                            <ul>
+                                <li><strong>Zenex / Megagen / Straumann</strong><br>High-quality implants used to replace missing teeth. These are placed into the jawbone and act like real roots for crowns or bridges. Straumann is a premium Swiss brand known for exceptional quality and durability.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <!-- Cosmetic Dentistry and Veneers -->
-                <div class="col-md-4 col-sm-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="150">
-                    <div class="service-card">
-                        <img src="{% static 'clinic/cosmetic.png' %}" alt="Cosmetic Dentistry and Veneers" class="service-image">
-                        <h4 class="service-title">Cosmetic Dentistry and Veneers</h4>
-                        <p class="service-description">Transform your smile with whitening, veneers, and personalized makeovers.</p>
-                    </div>
-                </div>
-                <!-- Dental Crowns and Bridges -->
-                <div class="col-md-4 col-sm-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-card">
-                        <img src="{% static 'clinic/crown.png' %}" alt="Dental Crowns and Bridges" class="service-image">
-                        <h4 class="service-title">Dental Crowns and Bridges</h4>
-                        <p class="service-description">High-quality prosthetics for damaged or missing teeth, ensuring durability.</p>
-                    </div>
-                </div>
-                <!-- Orthodontic Treatment -->
-                <div class="col-md-4 col-sm-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="450">
-                    <div class="service-card">
-                        <img src="{% static 'clinic/orthodontic.png' %}" alt="Orthodontic Treatment" class="service-image">
-                        <h4 class="service-title">Orthodontic Treatment</h4>
-                        <p class="service-description">Achieve straighter teeth and correct bites with orthodontic treatments.</p>
-                    </div>
-                </div>
-                <!-- Dentures -->
-                <div class="col-md-4 col-sm-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="600">
-                    <div class="service-card">
-                        <img src="{% static 'clinic/dentures.png' %}" alt="Dentures" class="service-image">
-                        <h4 class="service-title">Dentures</h4>
-                        <p class="service-description">Custom-made replacements for comfortable chewing, speaking, and smiling.</p>
-                    </div>
-                </div>
-                <!-- General Dentistry -->
-                <div class="col-md-4 col-sm-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="750">
-                    <div class="service-card">
-                        <img src="{% static 'clinic/general.png' %}" alt="General Dentistry" class="service-image">
-                        <h4 class="service-title">General Dentistry</h4>
-                        <p class="service-description">Preventive care, treatments, and maintenance for optimal oral health and a beautiful smile.</p>
+
+                <!-- Surgery -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseSurgery" aria-expanded="false" aria-controls="collapseSurgery">
+                            🪥 Surgery
+                        </button>
+                    </h2>
+                    <div id="collapseSurgery" class="accordion-collapse collapse" data-parent="#serviceAccordion">
+                        <div class="accordion-body">
+                            <ul>
+                                <li><strong>Tooth Extraction</strong><br>Removal of a tooth due to damage, infection, or crowding.</li>
+                                <li><strong>Wisdom Tooth Removal</strong><br>Extraction of third molars, which may be impacted or cause pain or crowding.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
