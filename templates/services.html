@@ -55,9 +55,9 @@
         }
 
         .accordion-item {
-            background: #ffffff;
+            background: #00487c;
+            color: #ffffff;
             border: none;
-            border-radius: 10px;
             margin-bottom: 15px;
             overflow: hidden;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -68,6 +68,22 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(0, 72, 124, 0.1);
         }
+
+        .accordion-item:first-of-type .accordion-button {
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+
+        .accordion-item:last-of-type .accordion-collapse {
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        .accordion-item:last-of-type .accordion-button.collapsed {
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
 
         .accordion-button {
             background-color: #00487c;
@@ -81,6 +97,7 @@
             width: 100%;
             position: relative;
             transition: background-color 0.3s ease;
+            border-radius: 10px;
         }
 
         .accordion-button::after {
@@ -222,8 +239,8 @@
             <button
                 class="navbar-toggler"
                 type="button"
-                data-toggle="collapse"
-                data-target="#navbarNav"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
                 aria-controls="navbarNav"
                 aria-expanded="false"
                 aria-label="Toggle navigation"
@@ -235,7 +252,7 @@
     
             <!-- Navigation links -->
             <div class="collapse navbar-collapse" id="navbarNav">
-                <nav class="nav d-flex ms-4 ml-auto mr-5">
+                <nav class="nav d-flex ms-4 ms-auto me-5">
                     <a href="{% url 'home' %}" class="nav-link">Home</a>
                     <a href="{% url 'services' %}" class="nav-link active">Services</a>
                     <a href="{% url 'contact' %}" class="nav-link">Contact Us</a>
@@ -256,13 +273,13 @@
         <div class="container">
             <div class="service-accordion" id="serviceAccordion">
                 <!-- Cleaning -->
-                <div class="accordion-item">
+                <div class="accordion-item" data-aos="fade-right" data-aos-delay="100">
                     <h2 class="accordion-header">
-                        <button class="accordion-button" type="button" data-toggle="collapse" data-target="#collapseCleaning" aria-expanded="true" aria-controls="collapseCleaning">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCleaning" aria-expanded="false" aria-controls="collapseCleaning">
                             🦷 Cleaning
                         </button>
                     </h2>
-                    <div id="collapseCleaning" class="accordion-collapse collapse show" data-parent="#serviceAccordion">
+                    <div id="collapseCleaning" class="accordion-collapse collapse" data-parent="#serviceAccordion">
                         <div class="accordion-body">
                             <ul>
                                 <li><strong>Basic Teeth Cleaning</strong><br>A routine cleaning to remove plaque and tartar, keeping your teeth and gums healthy.</li>
@@ -273,9 +290,9 @@
                 </div>
 
                 <!-- Aesthetic Dentistry -->
-                <div class="accordion-item">
+                <div class="accordion-item" data-aos="fade-right" data-aos-delay="200">
                     <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseAesthetic" aria-expanded="false" aria-controls="collapseAesthetic">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAesthetic" aria-expanded="false" aria-controls="collapseAesthetic">
                             ✨ Aesthetic Dentistry
                         </button>
                     </h2>
@@ -292,9 +309,9 @@
                 </div>
 
                 <!-- Prosthetic Dentistry -->
-                <div class="accordion-item">
+                <div class="accordion-item" data-aos="fade-right" data-aos-delay="300">
                     <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseProsthetic" aria-expanded="false" aria-controls="collapseProsthetic">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseProsthetic" aria-expanded="false" aria-controls="collapseProsthetic">
                             👑 Prosthetic Dentistry (Crowns and Dentures)
                         </button>
                     </h2>
@@ -313,9 +330,9 @@
                 </div>
 
                 <!-- Orthodontics -->
-                <div class="accordion-item">
+                <div class="accordion-item" data-aos="fade-right" data-aos-delay="400">
                     <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseOrthodontics" aria-expanded="false" aria-controls="collapseOrthodontics">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOrthodontics" aria-expanded="false" aria-controls="collapseOrthodontics">
                             😁 Orthodontics
                         </button>
                     </h2>
@@ -331,9 +348,9 @@
                 </div>
 
                 <!-- Dental Implants -->
-                <div class="accordion-item">
+                <div class="accordion-item" data-aos="fade-right" data-aos-delay="500">
                     <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseImplants" aria-expanded="false" aria-controls="collapseImplants">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseImplants" aria-expanded="false" aria-controls="collapseImplants">
                             🦷 Dental Implants
                         </button>
                     </h2>
@@ -347,9 +364,9 @@
                 </div>
 
                 <!-- Surgery -->
-                <div class="accordion-item">
+                <div class="accordion-item" data-aos="fade-right" data-aos-delay="600">
                     <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseSurgery" aria-expanded="false" aria-controls="collapseSurgery">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSurgery" aria-expanded="false" aria-controls="collapseSurgery">
                             🪥 Surgery
                         </button>
                     </h2>
