@@ -33,9 +33,6 @@ def register(request):
     tours = Tour.objects.all()
     return render(request, 'registration.html', {'serv': serv, 'tours': tours})
 
-def tour_info(request):
-    return render(request, 'tirana_tour.html')
-
 def success_view(request):
     return render(request, 'success.html')
 

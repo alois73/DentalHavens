@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Client Registration</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <style>
         body {
@@ -161,31 +161,31 @@
             <form method="POST" action="{% url 'register_client' %}">
                 {% csrf_token %}
                 <!-- First Name -->
-                <div class="form-group" data-aos="fade-down" data-aos-delay="200">
+                <div class="form-group mb-3" data-aos="fade-down" data-aos-delay="200">
                     <label for="id_first_name">First Name <span class="text-danger">*</span></label>
                     <input type="text" name="first_name" id="id_first_name" class="form-control" autocomplete="off" required>
                 </div>
 
                 <!-- Last Name -->
-                <div class="form-group" data-aos="fade-down" data-aos-delay="400">
+                <div class="form-group mb-3" data-aos="fade-down" data-aos-delay="400">
                     <label for="id_last_name">Last Name <span class="text-danger">*</span></label>
                     <input type="text" name="last_name" id="id_last_name" class="form-control" autocomplete="off" required>
                 </div>
 
                 <!-- Email -->
-                <div class="form-group" data-aos="fade-down" data-aos-delay="600">
+                <div class="form-group mb-3" data-aos="fade-down" data-aos-delay="600">
                     <label for="id_email">Email <span class="text-danger">*</span></label>
                     <input type="email" name="email" id="id_email" class="form-control" autocomplete="off" required>
                 </div>
 
                 <!-- Phone Number -->
-                <div class="form-group" data-aos="fade-down" data-aos-delay="800">
+                <div class="form-group mb-3" data-aos="fade-down" data-aos-delay="800">
                     <label for="id_phone_number">Phone Number <span class="text-danger">*</span></label>
-                    <input type="text" name="phone_number" id="id_phone_number" class="form-control" autocomplete="off" required>
+                    <input type="text" name="phone_number" id="id_phone_number" class="form-control" autocomplete="off" maxlength="11" required>
                 </div>
 
                 <!-- Tour Option -->
-                <div class="form-group" data-aos="fade-down" data-aos-delay="1000">
+                <div class="form-group mb-3" data-aos="fade-down" data-aos-delay="1000">
                     <label for="id_tour_option">Tour Option</label>
                     <select name="tour_option" id="id_tour_option" class="form-control">
                         <option value="">Choose a tour</option>
@@ -196,18 +196,18 @@
                 </div>
 
                 <!-- Custom Request Field -->
-                <div class="form-group" data-aos="fade-down" data-aos-delay="1200">
+                <div class="form-group mt-3" data-aos="fade-down" data-aos-delay="1200">
                     <label for="id_custom_request">Describe your dental service request</label>
                     <textarea name="custom_request" id="id_custom_request" rows="5" class="form-control" placeholder="Example: I want veneers for 6 upper front teeth, and maybe whitening."></textarea>
                 </div>
 
-                <div class="form-group" data-aos="fade-down" data-aos-delay="1200">
+                <div class="form-group mb-3" data-aos="fade-down" data-aos-delay="1200">
                     <label for="id_ref_code">Refferal code / Optional</label>
                     <input type="text" name="ref_code" id="id_ref_code" class="form-control" autocomplete="off">
                 </div>
 
                 <!-- Submit Button -->
-                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                <button type="submit" class="btn btn-primary btn-block mt-3">Submit</button>
             </form>
         </div>
     </div>
@@ -264,5 +264,6 @@
         once: true      
     });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </body>
 </html>
