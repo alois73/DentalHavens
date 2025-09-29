@@ -133,6 +133,42 @@
             font-size: 24px;
             font-weight: bold;
         }
+        .whatsapp-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            flex-direction: column;
+        }
+        .whatsapp-container h3 {
+            color: #00487c;
+            margin-bottom: 20px;
+        }
+        .whatsapp-button {
+            background-color: #25d366; /* WhatsApp green */
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-decoration: none;
+            margin-bottom: 20px;
+            max-width: 200px;
+        }
+        .whatsapp-button:hover {
+            background-color: #1ebe57;
+            transform: scale(1.02);
+            color: white;
+        }
+        .card {
+            border-radius: 12px;
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
     </style>
 </head>
 <body class="theme--light">
@@ -176,7 +212,7 @@
         
         <!-- Contact Form -->
         <div class="contact-form mx-auto" data-aos="fade-up">
-            <h3>Get in Touch</h3>
+            <h3>Get in Touch via Email</h3>
             <form method="post" action="{% url 'contact' %}">
                 {% csrf_token %}
                 
@@ -212,7 +248,41 @@
             
                 <button type="submit" class="btn btn-primary">Send Message</button>
             </form>
-            
+        </div>
+
+        <div class="whatsapp-container text-center" data-aos="fade-up">
+            <h3 class="mb-3">Connect with Us on WhatsApp</h3>
+            <p class="text-muted mb-4">Instant support and booking directly with our team.</p>
+        
+            <div class="row justify-content-center g-4">
+                <!-- WhatsApp Contact 1 -->
+                <div class="col-md-5">
+                    <div class="card border-0 shadow-lg h-100 p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fab fa-whatsapp fa-2x text-success me-3"></i>
+                            <h5 class="mb-0 text-dark">+355 68 353 8442</h5>
+                        </div>
+                        <p class="text-muted">For general inquiries, questions and appointments.</p>
+                        <a href="https://wa.me/355683538442" target="_blank" class="btn btn-success w-100">
+                            <i class="fab fa-whatsapp me-2"></i> Chat Now
+                        </a>
+                    </div>
+                </div>
+        
+                <!-- WhatsApp Contact 2 -->
+                <!-- <div class="col-md-5">
+                    <div class="card border-0 shadow-lg h-100 p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fab fa-whatsapp fa-2x text-success me-3"></i>
+                            <h5 class="mb-0 text-dark">+355 67 578 9372</h5>
+                        </div>
+                        <p class="text-muted">For appointments and follow-ups.</p>
+                        <a href="https://wa.me/355675789372" target="_blank" class="btn btn-success w-100">
+                            <i class="fab fa-whatsapp me-2"></i> Book Now
+                        </a>
+                    </div>
+                </div> -->
+            </div>
         </div>
 
         <!-- Google Maps Location -->
@@ -246,6 +316,7 @@
             <!-- <a href="https://facebook.com" class="social-icon mx-2"><i class="fab fa-facebook"></i></a> -->
             <a href="https://www.instagram.com/dentalhavens?igsh=MW96YThuOGxoZHc4Zw==" class="social-icon mx-2"><i class="fab fa-instagram"></i></a>
             <!-- <a href="https://x.com" class="social-icon mx-2"><i class="fab fa-x-twitter"></i></a> -->
+            <a href="https://wa.me/355683538442" target="_blank" class="social-icon mx-2"><i class="fab fa-whatsapp"></i></a>
           </div>
           <div class="contact-info mt-4">
             <p>Email: <a href="mailto:info@dentalhavens.com" class="text-white">info@dentalhavens.com</a></p>
