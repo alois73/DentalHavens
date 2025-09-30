@@ -61,18 +61,40 @@
 
         /* Hero Section */
         .hero-section {
-            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(255, 255, 255, 0)), url("{% static 'clinic/partner-hero.png' %}");
+            position: relative;
             color: white;
             padding: 5rem 1rem;
             text-align: center;
             min-height: 100vh;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
             display: flex;
             align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
+
+        /* Background video full cover */
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Optional: dark gradient overlay if you want text more visible */
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0,0,0,0.3));
+            z-index: 0;
+        }
+
         .hero-section .rect {
+            position: relative;
+            z-index: 1;
             background: rgba(0, 184, 150, 0.2);
             backdrop-filter: blur(10px);
             padding: 2rem;
@@ -80,6 +102,7 @@
             max-width: 600px;
             margin: 0 auto;
         }
+
         .hero-section h1 {
             font-size: 3rem;
             font-weight: bold;
@@ -420,6 +443,12 @@
 
     <!-- Hero Section -->
     <section class="hero-section">
+
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="{% static 'clinic/background_vid.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
         <div class="rect" data-aos="fade-up">
             <h1 data-aos="fade-up">Our Trusted Partner Clinic</h1>
             <p class="lead mt-3" data-aos="fade-up">World-class dental care with cutting-edge technology and compassionate professionals.</p>
