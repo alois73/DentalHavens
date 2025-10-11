@@ -29,12 +29,24 @@
             width: 100%;
             padding: 15px 0;
         }
-
+        .mobile-nav-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #00487c00;
+            cursor: pointer;
+            z-index: 1101;
+            transition: color 0.3s;
+        }
         .navbar .logo {
             font-size: 24px;
             color: #00487c;
         }
-
+        .active {
+            color: #82cbff !important;
+        }
         /* Page title */
         .page-title {
             text-align: center;
@@ -277,6 +289,56 @@
                 padding: 15px;
             }
         }
+        @media (max-width: 768px) {
+        .navbar {
+            background-color: rgba(0, 0, 0, 0) !important;
+        }
+        .navbar-collapse {
+            position: fixed;
+            background-color: rgba(0, 72, 124, 0.56);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem;
+            border-radius: 8px;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            justify-content: center;
+            z-index: 1050;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .navbar-collapse.show {
+            transform: translateX(0);
+        }
+        .nav-link {
+            padding: 1rem 1rem;
+            font-size: 35px;
+            color: #ffffff;
+            margin-right: 25px;
+        }
+        .nav-link:hover{
+            color: #018ffb;
+        }
+        .mobile-nav-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ffffff;
+            cursor: pointer;
+            z-index: 1101;
+            transition: color 0.3s;
+        }
+
+        .mobile-nav-close:hover {
+            color: #00bcd4;
+        }
+        }
 
         /* Ensure navbar padding works with fixed-top */
         body {
@@ -308,12 +370,13 @@
     
             <!-- Navigation links -->
             <div class="collapse navbar-collapse" id="navbarNav">
+                <span class="mobile-nav-close">&times;</span>
                 <nav class="nav d-flex ms-4 ms-auto me-5">
-                    <a href="{% url 'home' %}" class="nav-link">Home</a>
-                    <a href="{% url 'services' %}" class="nav-link active">Services</a>
-                    <a href="{% url 'contact' %}" class="nav-link">Contact Us</a>
-                    <a href="{% url 'partner_view' %}" class="nav-link">The Clinic</a>
-                    <a href="{% url 'affiliate_program' %}" class="nav-link">Affiliate Program</a>
+                    <a href="{% url 'home' %}" class="nav-link" >Home</a>
+                    <a href="{% url 'services' %}" class="nav-link active" >Services</a>
+                    <a href="{% url 'contact' %}" class="nav-link" >Contact Us</a>
+                    <a href="{% url 'partner_view' %}" class="nav-link" >The Clinic</a>
+                    <a href="{% url 'affiliate_program' %}" class="nav-link" >Affiliate Program</a>
                 </nav>
             </div>
         </div>
@@ -486,7 +549,17 @@
             </div>
         </div>
     </footer>
-
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            const collapse = document.querySelector(".navbar-collapse");
+            const closeBtn = document.querySelector(".mobile-nav-close");
+    
+        
+            closeBtn.addEventListener("click", () => {
+                collapse.classList.remove("show");
+            });
+        });
+    </script>
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>

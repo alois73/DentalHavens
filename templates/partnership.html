@@ -33,16 +33,27 @@
             padding: 15px 0;
             z-index: 1000;
         }
+        .mobile-nav-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #00487c00;
+            cursor: pointer;
+            z-index: 1101;
+            transition: color 0.3s;
+        }
         .navbar-brand {
             color: #ffffff !important;
             font-size: 24px;
             font-weight: bold;
         }
         .nav-link {
-            color: #ffffff !important;
+            color: #ffffff ;
         }
         .nav-link.active {
-            color: #00487c !important;
+            color: #00ff8c ;
         }
         .navbar-toggler {
             border: none;
@@ -380,17 +391,6 @@
                 width: 90%;
                 padding: 1.5rem;
             }
-            .navbar {
-                background-color: rgba(0, 0, 0, 0) !important;
-            }
-            .navbar-collapse {
-                background-color: rgba(0, 0, 0, 0.5);
-                padding: 0.5rem;
-                border-radius: 8px;
-            }
-            .nav-link {
-                padding: 0.5rem 1rem;
-            }
             .introduction-grid {
                 grid-template-columns: 1fr;
                 margin: 0 auto;
@@ -428,7 +428,57 @@
                 height: auto;
             }
         }
+        /* Navbar Media Mobile */
+        @media (max-width: 768px) {
+        .navbar {
+            background-color: rgba(0, 0, 0, 0) !important;
+        }
+        .navbar-collapse {
+            position: fixed;
+            background-color: rgba(0, 163, 127, 0.409);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem;
+            border-radius: 8px;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            justify-content: center;
+            z-index: 1050;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .navbar-collapse.show {
+            transform: translateX(0);
+        }
+        .nav-link {
+            padding: 1rem 1rem;
+            font-size: 35px;
+            color: #ffffff;
+            margin-right: 25px;
+        }
+        .nav-link:hover{
+            color: #018ffb;
+        }
+        .mobile-nav-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ffffff;
+            cursor: pointer;
+            z-index: 1101;
+            transition: color 0.3s;
+        }
 
+        .mobile-nav-close:hover {
+            color: #00bcd4;
+        }
+        }
         @media (max-width: 480px) {
             .hero-section h1 {
                 font-size: 1.5rem;
@@ -501,12 +551,13 @@
         
             <!-- Navigation links -->
             <div class="collapse navbar-collapse" id="navbarNav">
+                <span class="mobile-nav-close">&times;</span>
                 <nav class="nav d-flex ms-4 ms-auto me-5">
-                    <a href="{% url 'home' %}" class="nav-link">Home</a>
-                    <a href="{% url 'services' %}" class="nav-link">Services</a>
-                    <a href="{% url 'contact' %}" class="nav-link">Contact Us</a>
-                    <a href="{% url 'partner_view' %}" class="nav-link active">The Clinic</a>
-                    <a href="{% url 'affiliate_program' %}" class="nav-link">Affiliate Program</a>
+                    <a href="{% url 'home' %}" class="nav-link" >Home</a>
+                    <a href="{% url 'services' %}" class="nav-link" >Services</a>
+                    <a href="{% url 'contact' %}" class="nav-link" >Contact Us</a>
+                    <a href="{% url 'partner_view' %}" class="nav-link active" >The Clinic</a>
+                    <a href="{% url 'affiliate_program' %}" class="nav-link" >Affiliate Program</a>
                 </nav>
             </div>
         </div>
@@ -556,23 +607,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Why Us Section -->
-    <section class="whyus-section my-5">
-        <div class="container text-center mb-4" data-aos="fade-down">
-            <h1 style="color: #27A187;">Why Us?</h1>
-        </div>
-        <div class="whyus-grid" data-aos="fade-right">
-            <div class="whyus-card">
-                <h3>Going the extra mile for your smile</h3>
-                <p>Our advanced technology and expertise in dental implants ensure strong, lasting results. From checkups to precise implant treatments, we’re here to help you maintain a confident smile for years to come.</p>
-            </div>
-            <div class="whyus-card image-card" data-aos="fade-left">
-                <img src="{% static 'clinic/wall1.png' %}" alt="Clinic Interior">
-            </div>
-        </div>
-    </section>
-
     <!-- Our Doctors Section -->
     <section class="container py-5">
         <h1 class="text-center" style="color: #27A187;" data-aos="fade-down">Meet Our Doctors</h1>
@@ -624,6 +658,21 @@
             <div class="doctors-card">
                 <img src="{% static 'staff/silvana.jpg' %}" alt="Doctor 7">
                 <h5>Dr. Silvana Meça</h5>
+            </div>
+        </div>
+    </section>
+    <!-- Why Us Section -->
+    <section class="whyus-section my-5">
+        <div class="container text-center mb-4" data-aos="fade-down">
+            <h1 style="color: #27A187;">Why Us?</h1>
+        </div>
+        <div class="whyus-grid" data-aos="fade-right">
+            <div class="whyus-card">
+                <h3>Going the extra mile for your smile</h3>
+                <p>Our advanced technology and expertise in dental implants ensure strong, lasting results. From checkups to precise implant treatments, we’re here to help you maintain a confident smile for years to come.</p>
+            </div>
+            <div class="whyus-card image-card" data-aos="fade-left">
+                <img src="{% static 'clinic/wall1.png' %}" alt="Clinic Interior">
             </div>
         </div>
     </section>
@@ -697,7 +746,17 @@
             </div>
         </div>
     </footer>
-
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            const collapse = document.querySelector(".navbar-collapse");
+            const closeBtn = document.querySelector(".mobile-nav-close");
+    
+        
+            closeBtn.addEventListener("click", () => {
+                collapse.classList.remove("show");
+            });
+        });
+    </script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
