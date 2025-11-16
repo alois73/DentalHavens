@@ -278,33 +278,56 @@
 }
 
 /* Buttons inside overlay */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px; /* space between buttons */
+    flex-wrap: nowrap; /* prevent stacking */
+}
+
+.hero-buttons .btn {
+    padding: 12px 25px;       /* equal height for both buttons */
+    font-size: 1rem;          /* uniform font size */
+    border-radius: 8px;
+    height: 50px;             /* fixed height for visual balance */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Primary Book Now button */
 .hero-buttons .btn-primary {
     background-color: #00487c;
     border-color: #00487c;
-    padding: 10px 25px;
-    font-size: 1rem;
-    border-radius: 8px;
-    transition: background-color 0.3s, transform 0.3s;
+    color: #ffffff;
 }
 
 .hero-buttons .btn-primary:hover {
     background-color: #00365f;
-    transform: translateY(-2px);
 }
 
+/* Secondary Contact Us button */
 .hero-buttons .btn-outline-light {
-    border-color: #ffffff;
+    border: 2px solid #ffffff;
     color: #ffffff;
-    font-size: 0.9rem;
-    padding: 8px 20px;
-    border-radius: 8px;
-    transition: background-color 0.3s, color 0.3s;
+    background-color: transparent;
 }
 
 .hero-buttons .btn-outline-light:hover {
     background-color: #ffffff;
     color: #00487c;
 }
+
+/* Small screen adjustment */
+@media (max-width: 576px) {
+    .hero-buttons .btn {
+        font-size: 0.9rem;  /* slightly smaller font */
+        padding: 10px 20px; /* adjust padding */
+        height: 45px;       /* keep heights equal */
+    }
+}
+
 
 
 
