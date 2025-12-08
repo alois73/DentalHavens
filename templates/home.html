@@ -229,104 +229,104 @@
 
 
 
-        /* About the Clinic */
-.about-clinic {
-    background-color: #78c0fb; /* light blue */
-    padding: 80px 0;
-    text-align: center;
-}
+                /* About the Clinic */
+        .about-clinic {
+            background-color: #78c0fb; /* light blue */
+            padding: 80px 0;
+            text-align: center;
+        }
 
-.about-header {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
+        .about-header {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
 
-.about-description {
-    color: #555;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto 30px auto;
-}
+        .about-description {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+        }
 
-.about-clinic .btn-primary {
-    background-color: #00487c;
-    border-color: #00487c;
-    padding: 10px 25px;
-    font-size: 1rem;
-    border-radius: 8px;
-    transition: background-color 0.3s, transform 0.3s;
-}
+        .about-clinic .btn-primary {
+            background-color: #00487c;
+            border-color: #00487c;
+            padding: 10px 25px;
+            font-size: 1rem;
+            border-radius: 8px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
 
-.about-clinic .btn-primary:hover {
-    background-color: #00365f;
-    transform: translateY(-2px);
-}
+        .about-clinic .btn-primary:hover {
+            background-color: #00365f;
+            transform: translateY(-2px);
+        }
 
 
 
-/* Hero Overlay Box */
-.hero-overlay {
-    background: rgba(14, 119, 194, 0.5); /* semi-transparent blue */
-    backdrop-filter: blur(12px);          /* blur the background */
-    -webkit-backdrop-filter: blur(10px);  /* Safari support */
-    padding: 40px 30px;
-    border-radius: 15px;
-    display: inline-block;
-    max-width: 600px;
-    width: 90%;
-}
+        /* Hero Overlay Box */
+        .hero-overlay {
+            background: rgba(14, 119, 194, 0.5); /* semi-transparent blue */
+            backdrop-filter: blur(12px);          /* blur the background */
+            -webkit-backdrop-filter: blur(10px);  /* Safari support */
+            padding: 40px 30px;
+            border-radius: 15px;
+            display: inline-block;
+            max-width: 600px;
+            width: 90%;
+        }
 
-/* Buttons inside overlay */
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px; /* space between buttons */
-    flex-wrap: nowrap; /* prevent stacking */
-}
+        /* Buttons inside overlay */
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px; /* space between buttons */
+            flex-wrap: nowrap; /* prevent stacking */
+        }
 
-.hero-buttons .btn {
-    padding: 12px 25px;       /* equal height for both buttons */
-    font-size: 1rem;          /* uniform font size */
-    border-radius: 8px;
-    height: 50px;             /* fixed height for visual balance */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        .hero-buttons .btn {
+            padding: 12px 25px;       /* equal height for both buttons */
+            font-size: 1rem;          /* uniform font size */
+            border-radius: 8px;
+            height: 50px;             /* fixed height for visual balance */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-/* Primary Book Now button */
-.hero-buttons .btn-primary {
-    background-color: #00487c;
-    border-color: #00487c;
-    color: #ffffff;
-}
+        /* Primary Book Now button */
+        .hero-buttons .btn-primary {
+            background-color: #00487c;
+            border-color: #00487c;
+            color: #ffffff;
+        }
 
-.hero-buttons .btn-primary:hover {
-    background-color: #00365f;
-}
+        .hero-buttons .btn-primary:hover {
+            background-color: #00365f;
+        }
 
-/* Secondary Contact Us button */
-.hero-buttons .btn-outline-light {
-    border: 2px solid #ffffff;
-    color: #ffffff;
-    background-color: transparent;
-}
+        /* Secondary Contact Us button */
+        .hero-buttons .btn-outline-light {
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            background-color: transparent;
+        }
 
-.hero-buttons .btn-outline-light:hover {
-    background-color: #ffffff;
-    color: #00487c;
-}
+        .hero-buttons .btn-outline-light:hover {
+            background-color: #ffffff;
+            color: #00487c;
+        }
 
-/* Small screen adjustment */
-@media (max-width: 576px) {
-    .hero-buttons .btn {
-        font-size: 0.9rem;  /* slightly smaller font */
-        padding: 10px 20px; /* adjust padding */
-        height: 45px;       /* keep heights equal */
-    }
-}
+        /* Small screen adjustment */
+        @media (max-width: 576px) {
+            .hero-buttons .btn {
+                font-size: 0.9rem;  /* slightly smaller font */
+                padding: 10px 20px; /* adjust padding */
+                height: 45px;       /* keep heights equal */
+            }
+        }
 
 
 
@@ -503,68 +503,202 @@
         }
 
         
+
+
+        .transformation-card {
+    height: 400px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    border: 3px solid transparent;
+}
+
+.transformation-card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(0, 72, 124, 0.25) !important;
+    border-color: #00487c;
+}
+
+.transformation-card img {
+    transition: transform 0.6s ease;
+}
+
+.transformation-card:hover img {
+    transform: scale(1.15);
+}
+
+.transformation-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(0,72,124,0.85), rgba(0,140,255,0.75));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    border-radius: 16px;
+    backdrop-filter: blur(4px);
+}
+
+.transformation-card:hover .transformation-overlay {
+    opacity: 1;
+}
+
+.transformation-overlay p {
+    font-size: 1.1rem;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+/* Mobile optimization */
+@media (max-width: 576px) {
+    .transformation-card {
+        height: 220px;
+    }
+    .transformation-overlay p {
+        font-size: 0.95rem;
+    }
+}
+
+
+
+
+
         /* Enhanced Reviews Section Styles (Placeholder until images are provided) */
         .reviews-section {
             padding: 80px 0;
-            background: linear-gradient(135deg, #f9fbfd 0%, #e6f0fa 100%);
-            text-align: center;
         }
+
         .reviews-header {
-            color: #00487c;
             font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            margin-bottom: 50px;
         }
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .review-card {
-            background-color: #ffffff;
+
+        .reviews-grid .review-card {
+            background: #ffffff;
             border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 6px 20px rgba(0, 72, 124, 0.1);
+            box-shadow: 0 8px 20px rgba(0, 72, 124, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            height: 100%;
         }
-        .review-card:hover {
+
+        .reviews-grid .review-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 72, 124, 0.15);
+            box-shadow: 0 12px 25px rgba(0, 72, 124, 0.15);
         }
+
         .review-image {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 15px;
             border: 3px solid #00487c;
+            margin: 0 auto 15px auto;
         }
+
         .review-text {
-            font-size: 1.1rem;
-            color: #444;
-            line-height: 1.7;
-            margin-bottom: 20px;
-            flex-grow: 1;
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
             font-style: italic;
-        }
-        .rating {
-            color: #f4c430;
             margin-bottom: 15px;
         }
+
         .review-author {
-            font-size: 1rem;
-            color: #00487c;
             font-weight: 600;
-            text-align: right;
+            color: #00487c;
         }
+
+        .rating i {
+            color: #f4c430;
+        }
+        .review-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 72, 124, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .review-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 72, 124, 0.15);
+        }
+        .media-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 72, 124, 0.1);
+            transition: transform .2s;
+        }
+        .media-card:hover {
+            transform: scale(1.02);
+        }
+        .media-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .review-box {
+            background: white;
+            border-radius: 14px;
+            box-shadow: 0 8px 25px rgba(0, 72, 124, 0.12);
+            position: relative;
+            transition: 0.2s ease;
+            min-height: 335px;
+        }
+        .review-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 72, 124, 0.2);
+        }
+        .quote-icon {
+            font-size: 50px;
+            color: #00487c;
+            line-height: 0.5;
+            opacity: 0.2;
+            position: absolute;
+            top: 15px;
+            left: 20px;
+        }
+        .stars {
+            color: #f4c430;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        /* MEDIA BOX */
+        .media-box {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            height: 260px;
+            box-shadow: 0 8px 25px rgba(0, 72, 124, 0.12);
+        }
+        .media-box img,
+        .media-box video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .media-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 72, 124, 0.55);
+            display: flex;
+            opacity: 0;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.3rem;
+            transition: 0.3s ease;
+        }
+        .media-box:hover .media-overlay {
+            opacity: 1;
+        }
+
         @media (max-width: 768px) {
             .reviews-header {
                 font-size: 2rem;
@@ -576,7 +710,7 @@
                 padding: 20px;
             }
             .review-text {
-                font-size: 1rem;
+                font-size: 0.95rem;
             }
         }
     </style>
@@ -638,42 +772,172 @@
     </section>
 
 <!-- Enhanced Reviews Section (Placeholder until images are provided) -->
-<section class="reviews-section">
+<section class="reviews-section py-5" style="background: #f4faff;">
     <div class="container">
-        <h2 class="reviews-header" data-aos="fade-down">What Our Patients Say</h2>
-        <div class="reviews-grid">
-            <div class="review-card" data-aos="fade-up">
-                <p class="review-text">"My experience with this clinic has been impeccable. I'm an Egyptian residing in France and I traveled to Albania just to get my teeth done with Dr Anduela. She's very gentle and time efficient. I got all 4 of my wisdom teeth removed and the experience couldn't have gone smoother. I highly recommend!"</p>
-                <div class="rating">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+
+        <!-- Title -->
+        <h2 class="text-center mb-5 fw-bold" style="color: #00487c;">
+            What Our Patients Say
+        </h2>
+
+        <!-- TEXT REVIEWS -->
+        <div class="row g-4 justify-content-center">
+
+            <!-- Review Card -->
+            <div class="col-md-4">
+                <div class="review-box p-4">
+                    
+                    <p>
+                        I recently chose Andent Clinic for my dental care, and the experience exceeded all expectations. I had several dental implants and crowns placed, and the quality and natural look of the work impressed me deeply. My son also started his orthodontic treatment here, and in under a year, we noticed remarkable alignment improvements. The dedication and friendliness of dental assistant Julinda Kaba...
+                    </p>
+                    <h6 class="review-author mt-3">— Lucas Miller</h6>
+                    <div class="stars">★★★★★</div>
                 </div>
-                <p class="review-author">- Malak Heider</p>
             </div>
-            <div class="review-card" data-aos="fade-up" data-aos-delay="150">
-                <p class="review-text">"Excellent service. Very hospitable and friendly staff. I don't usually feel comfortable when visiting dental clinics but here it's a different story. Dentists are very amicable and professional. They listen at you carefully and try to make you feel relaxed and in good hands. Very happy with results and the whole experience was amazing."</p>
-                <div class="rating">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+
+            <!-- Review Card -->
+            <div class="col-md-4">
+                <div class="review-box p-4">
+                    
+                    <p>
+                        I had a devitalization (nerve removal) and filling done, and the whole experience was excellent. The staff were true experts, explaining everything clearly and making me feel completely comfortable throughout the treatment. The quality of their work was outstanding, and I’m very happy with the result. Highly recommended clinic.
+                    </p>
+                    <h6 class="review-author mt-3">— Amer Biro</h6>
+                    <div class="stars">★★★★★</div>
                 </div>
-                <p class="review-author">- Emiljano Manjani</p>
             </div>
-            <div class="review-card" data-aos="fade-up" data-aos-delay="300">
-                <p class="review-text">"Best dental clinic I've ever been to so far. The staff is very professional and knowledgeable with explaining and resolving any issues that you may have. They make you feel so important. Can't ask for more. I would highly recommend Andent Clinic."</p>
-                <div class="rating">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+
+            <!-- Review Card -->
+            <div class="col-md-4">
+                <div class="review-box p-4">
+                    
+                    <p>
+                        I had an amazing experience at Andent Clinic. I got a full mouth restoration with porcelain crowns and implants, and the results look so natural that I can finally smile with confidence again. My son also had braces here, and in just one year his teeth became perfectly straight.
+
+                        What really made the process smooth was the incredible support from Tina, along with the clear communication and care from Dr. Anduela. My whole family now trusts Andent for...                 
+                    </p>
+                    <h6 class="review-author mt-3">— John</h6>
+                    <div class="stars">★★★★★</div>
                 </div>
-                <p class="review-author">- Ivi Bogo</p>
+            </div>
+            <div class="text-center mt-5">
+                <a href="https://www.trustindex.io/reviews/andent.al" target="_blank" class="btn btn-outline-primary btn-lg px-5 py-3 rounded-pill shadow-sm fw-bold">
+                    <i class="fab fa-google me-2"></i> Read All 500+ Reviews on Google
+                </a>
+            </div>
+
+        </div>
+
+<!-- STUNNING NEW PHOTO GALLERY - Real Patient Transformations -->
+<h3 class="text-center mt-5 mb-5 fw-bold position-relative" style="color: #00487c;">
+    Real Patient Transformations
+    <div class="text-center mt-3">
+        <span class="badge bg-primary fs-6 px-4 py-2 rounded-pill shadow-sm">
+            <i class="fas fa-camera me-2"></i> Before & After Gallery
+        </span>
+    </div>
+</h3>
+
+<div class="row g-3 g-md-4 justify-content-center">
+    <!-- Photo 1 -->
+    <div class="col-6 col-md-4 col-lg-4">
+        <div class="transformation-card position-relative overflow-hidden rounded-4 shadow-lg">
+            <img src="{% static 'clinic/testemon1.jpeg' %}" class="img-fluid w-100 h-100 object-fit-cover" alt="Smile Transformation 1">
+            <div class="transformation-overlay">
+                <div class="text-white text-center">
+                    <i class="fas fa-sparkles fa-2x mb-2"></i>
+                    <p class="fw-bold mb-0">Full Smile Makeover</p>
+                </div>
             </div>
         </div>
     </div>
+
+    <!-- Photo 2 -->
+    <div class="col-6 col-md-4 col-lg-4">
+        <div class="transformation-card position-relative overflow-hidden rounded-4 shadow-lg">
+            <img src="{% static 'clinic/testemon2.jpeg' %}" class="img-fluid w-100 h-100 object-fit-cover" alt="Smile Transformation 2">
+            <div class="transformation-overlay">
+                <div class="text-white text-center">
+                    <i class="fas fa-crown fa-2x mb-2"></i>
+                    <p class="fw-bold mb-0">Porcelain Crowns</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Photo 3 -->
+    <div class="col-6 col-md-4 col-lg-4">
+        <div class="transformation-card position-relative overflow-hidden rounded-4 shadow-lg">
+            <img src="{% static 'clinic/testemon3.jpeg' %}" class="img-fluid w-100 h-100 object-fit-cover" alt="Smile Transformation 3">
+            <div class="transformation-overlay">
+                <div class="text-white text-center">
+                    <i class="fas fa-tooth fa-2x mb-2"></i>
+                    <p class="fw-bold mb-0">Dental Implants</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Photo 4 -->
+    <div class="col-6 col-md-4 col-lg-4">
+        <div class="transformation-card position-relative overflow-hidden rounded-4 shadow-lg">
+            <img src="{% static 'clinic/testemon4.jpeg' %}" class="img-fluid w-100 h-100 object-fit-cover" alt="Smile Transformation 4">
+            <div class="transformation-overlay">
+                <div class="text-white text-center">
+                    <i class="fas fa-star fa-2x mb-2"></i>
+                    <p class="fw-bold mb-0">Hollywood Smile</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Photo 5 -->
+    <div class="col-6 col-md-4 col-lg-4">
+        <div class="transformation-card position-relative overflow-hidden rounded-4 shadow-lg">
+            <img src="{% static 'clinic/testemon5.jpeg' %}" class="img-fluid w-100 h-100 object-fit-cover" alt="Smile Transformation 5">
+            <div class="transformation-overlay">
+                <div class="text-white text-center">
+                    <i class="fas fa-smile-beam fa-2x mb-2"></i>
+                    <p class="fw-bold mb-0">Veneers & Whitening</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Photo 6 -->
+    <div class="col-6 col-md-4 col-lg-4">
+        <div class="transformation-card position-relative overflow-hidden rounded-4 shadow-lg">
+            <img src="{% static 'clinic/testemon6.jpeg' %}" class="img-fluid w-100 h-100 object-fit-cover" alt="Smile Transformation 6">
+            <div class="transformation-overlay">
+                <div class="text-white text-center">
+                    <i class="fas fa-heart fa-2x mb-2"></i>
+                    <p class="fw-bold mb-0">Life-Changing Result</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- Google Badge -->
+        <!-- <div class="text-center mt-4">
+            <a href="https://www.google.com/maps/place/Dentisti+in+Albania+-+Andent+Clinic/@41.3305151,19.8163808,17z/data=!3m1!4b1!4m6!3m5!1s0x135031303fe86d0b:0x7d2830bb4995e303!8m2!3d41.3305151!4d19.8189557!16s%2Fg%2F11rpmkjphg?entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D"
+               class="btn btn-primary px-4 py-2" target="_blank">
+                View More Reviews on Google ⭐
+            </a>
+        </div> -->
+
+    </div>
 </section>
+
+
 
 <!-- About the Clinic Section -->
 <section class="about-clinic py-5" style="background-color: #eaf4fc;">
     <div class="container text-center">
         <h2 class="about-header" data-aos="fade-down" style="color: #00487c; font-weight: bold;">About Our Clinic</h2>
         <p class="about-description" data-aos="fade-up" style="max-width: 800px; margin: 0 auto; color: #555; font-size: 1.1rem; line-height: 1.6;">
-            DentalHavens partners with top-tier clinics that combine advanced dental technology with exceptional patient care. 
-            Our clinic ensures every treatment is precise, comfortable, and tailored to your needs. 
+            DentalHavens partners with a top-tier clinic that combinse advanced dental technology with exceptional patient care. 
+            Our partner, Andent Clinic, ensures every treatment is precise, comfortable, and tailored to your needs. 
             Experience a world-class dental journey in a welcoming, professional environment.
         </p>
         <a href="{% url 'partner_view' %}" class="btn btn-primary mt-4" data-aos="fade-up" data-aos-delay="150">
